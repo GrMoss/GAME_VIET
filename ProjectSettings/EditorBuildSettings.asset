@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Login.unity
+    guid: 47b18dc4d4694485d8604051badbe157
+  - enabled: 1
+    path: Assets/Scenes/Home.unity
+    guid: 43de9e029a3d849aa943374ce5f25ea6
+  - enabled: 1
+    path: Assets/Scenes/DiCaKheo.unity
+    guid: 3072bc6ca33a8449ea3a2e2a5ede3ffe
+  - enabled: 1
+    path: Assets/Scenes/TimLeVat.unity
+    guid: 406840c606de8456e803be15e6afc952
   m_configObjects: {}
