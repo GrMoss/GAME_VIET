@@ -17,4 +17,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimLeVat.unity
     guid: 406840c606de8456e803be15e6afc952
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: bc837549eb453427fb4252ba1a8bbb20, type: 2}
