@@ -7,7 +7,7 @@ public class ButtonLogin : MonoBehaviour
 {
  public void ButtonPlay()
  {
-     SceneManager.LoadScene("DiCaKheo");
+     SceneManager.LoadScene("Home");
  }
 
  public void Exit()
