@@ -261,27 +261,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Male_Run_Down_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 96
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54874639293524ea8b3d212af95e2672
-      internalID: -888963300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -299,7 +278,6 @@ TextureImporter:
       Male_Run_Down_3: 1372421698
       Male_Run_Down_4: 2133420486
       Male_Run_Down_5: 1271746604
-      Male_Run_Down_6: -888963300
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
