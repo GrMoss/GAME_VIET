@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7810e86ba44a443549ec4c09f8d34a1d
-      internalID: -289969094
+      spriteID: 91b0b279520f04be781dbc010502088a
+      internalID: 1413132139
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 711e99e40b3864e40a007e1a2cffaae7
-      internalID: -1452303567
+      spriteID: 7e8e4b70581144076b52c3ae3fc0cf55
+      internalID: -1597380573
       vertices: []
       indices: 
       edges: []
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2727cb7922c41461e8ba261c2da25e94
-      internalID: 715556956
+      spriteID: 2170a454119524ed3bd72fb0fc831047
+      internalID: -1794452781
       vertices: []
       indices: 
       edges: []
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d814df178a40943bcbce4f63a0824ba4
-      internalID: 1807431671
+      spriteID: 4b4e2cacdd98a469c85b9347f8e84f61
+      internalID: 1728771482
       vertices: []
       indices: 
       edges: []
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77d21d35a1640461db1c1672a6b41be2
-      internalID: 1202408842
+      spriteID: 11e6fc77c901245c5807b30c19f5f182
+      internalID: -1555502407
       vertices: []
       indices: 
       edges: []
@@ -255,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d34d5c6e7ed6e4711887f3c869502ebe
-      internalID: -1227650643
+      spriteID: f4b5cf36680ca46c9ba3b99c2d83d270
+      internalID: -1257553718
       vertices: []
       indices: 
       edges: []
@@ -272,12 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Male_Run_Right_0: -289969094
-      Male_Run_Right_1: -1452303567
-      Male_Run_Right_2: 715556956
-      Male_Run_Right_3: 1807431671
-      Male_Run_Right_4: 1202408842
-      Male_Run_Right_5: -1227650643
+      Male_Run_Right_0: 1413132139
+      Male_Run_Right_1: -1597380573
+      Male_Run_Right_2: -1794452781
+      Male_Run_Right_3: 1728771482
+      Male_Run_Right_4: -1555502407
+      Male_Run_Right_5: -1257553718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
