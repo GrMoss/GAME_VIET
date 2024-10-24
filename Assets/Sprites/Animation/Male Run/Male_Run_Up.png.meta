@@ -136,7 +136,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Male_Run_Down_0
+      name: Male_Run_Up_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 255420b74d7d64ff89f98cdb2cf7d8a0
-      internalID: 1701137828
+      spriteID: 1bfd448d1a9334df198d2394b639913e
+      internalID: 1517140338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Male_Run_Down_1
+      name: Male_Run_Up_1
       rect:
         serializedVersion: 2
         x: 16
@@ -171,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59aba65d732b04131a2d640ef904e73e
-      internalID: -357664484
+      spriteID: 401a7bf9efc444e5282944825b4a5982
+      internalID: -1851987083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Male_Run_Down_2
+      name: Male_Run_Up_2
       rect:
         serializedVersion: 2
         x: 32
@@ -192,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6327ec0af6e754399ac9451577938015
-      internalID: 20986707
+      spriteID: fea9ee8220a49467f8952acc82ef04ed
+      internalID: -1329836910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Male_Run_Down_3
+      name: Male_Run_Up_3
       rect:
         serializedVersion: 2
         x: 48
@@ -213,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78099d0f66075423aa4654ba2fc896f3
-      internalID: -1140363547
+      spriteID: 4b494b72e976a4c3db697e777d9ce621
+      internalID: 808499924
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Male_Run_Down_4
+      name: Male_Run_Up_4
       rect:
         serializedVersion: 2
         x: 64
@@ -234,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 107ca164534914599b6ce944e3ce223c
-      internalID: 889565139
+      spriteID: 34ba7976a5a594c3c9922f242bc4260c
+      internalID: 234560243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Male_Run_Down_5
+      name: Male_Run_Up_5
       rect:
         serializedVersion: 2
         x: 80
@@ -255,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 648ebd9f9b2114bdfbee2f8542ca0053
-      internalID: 478965568
+      spriteID: a638e8102a8b24febb302a3868c9c4ba
+      internalID: -756057799
       vertices: []
       indices: 
       edges: []
@@ -272,12 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Male_Run_Down_0: 1701137828
-      Male_Run_Down_1: -357664484
-      Male_Run_Down_2: 20986707
-      Male_Run_Down_3: -1140363547
-      Male_Run_Down_4: 889565139
-      Male_Run_Down_5: 478965568
+      Male_Run_Up_0: 1517140338
+      Male_Run_Up_1: -1851987083
+      Male_Run_Up_2: -1329836910
+      Male_Run_Up_3: 808499924
+      Male_Run_Up_4: 234560243
+      Male_Run_Up_5: -756057799
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

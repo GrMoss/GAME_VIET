@@ -150,8 +150,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 255420b74d7d64ff89f98cdb2cf7d8a0
-      internalID: 1701137828
+      spriteID: bfe65c7147070489a8fc27b43f677d21
+      internalID: 1444125554
       vertices: []
       indices: 
       edges: []
@@ -171,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59aba65d732b04131a2d640ef904e73e
-      internalID: -357664484
+      spriteID: 0b4e614fc6e4a449e8da0ee9a00da449
+      internalID: -815387152
       vertices: []
       indices: 
       edges: []
@@ -192,8 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6327ec0af6e754399ac9451577938015
-      internalID: 20986707
+      spriteID: a0751d29e90d44a09ab9de83fe83f4fe
+      internalID: -1822083218
       vertices: []
       indices: 
       edges: []
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78099d0f66075423aa4654ba2fc896f3
-      internalID: -1140363547
+      spriteID: b135b494fbf7945c2b48c0748683f761
+      internalID: 1372421698
       vertices: []
       indices: 
       edges: []
@@ -234,8 +234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 107ca164534914599b6ce944e3ce223c
-      internalID: 889565139
+      spriteID: a0d78b3bd0680434e83ff0effae90d9d
+      internalID: 2133420486
       vertices: []
       indices: 
       edges: []
@@ -255,8 +255,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 648ebd9f9b2114bdfbee2f8542ca0053
-      internalID: 478965568
+      spriteID: fabe6efe83bfa463aacae8a0d924779a
+      internalID: 1271746604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Male_Run_Down_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54874639293524ea8b3d212af95e2672
+      internalID: -888963300
       vertices: []
       indices: 
       edges: []
@@ -272,12 +293,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Male_Run_Down_0: 1701137828
-      Male_Run_Down_1: -357664484
-      Male_Run_Down_2: 20986707
-      Male_Run_Down_3: -1140363547
-      Male_Run_Down_4: 889565139
-      Male_Run_Down_5: 478965568
+      Male_Run_Down_0: 1444125554
+      Male_Run_Down_1: -815387152
+      Male_Run_Down_2: -1822083218
+      Male_Run_Down_3: 1372421698
+      Male_Run_Down_4: 2133420486
+      Male_Run_Down_5: 1271746604
+      Male_Run_Down_6: -888963300
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
