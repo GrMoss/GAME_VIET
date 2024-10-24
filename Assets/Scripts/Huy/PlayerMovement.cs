@@ -5,20 +5,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovememt : MonoBehaviour
 {
-    [SerializeField] private InputActionReference moveActionToUse; 
+    [SerializeField] private InputActionReference moveActionToUse;
 
-    [SerializeField] private float speed = 5f; 
+    [SerializeField] private float speed = 5f;
 
     private Rigidbody2D myRigidbody2D;
     private Vector2 moveDirection;
-    // private Animator animator;
+    private Animator animator;
+
+    private Vector2 lastMoveDirection;
+    
     // private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         myRigidbody2D = GetComponent<Rigidbody2D>();
-        // animator = GetComponent<Animator>();
-        // spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -33,24 +35,33 @@ public class PlayerMovememt : MonoBehaviour
 
     private void Update()
     {
-        moveDirection = moveActionToUse.action.ReadValue<Vector2>();
-        
-        // // Cập nhật trạng thái hoạt hình nếu có
-        // if (animator != null)
-        // {
-        //     animator.SetBool("Walk", moveDirection.magnitude > 0);
-        // }
-        //
-        // // Lật hình nhân vật dựa trên hướng di chuyển
-        // if (moveDirection.x != 0)
-        // {
-        //     spriteRenderer.flipX = moveDirection.x < 0;
-        // }
+        Move();
     }
 
     private void FixedUpdate()
     {
-        // Di chuyển nhân vật dựa trên hướng và tốc độ
         myRigidbody2D.velocity = moveDirection * speed;
     }
+    
+    private void Move()
+    {
+        Anim();
+        moveDirection = moveActionToUse.action.ReadValue<Vector2>();
+        if (moveDirection.x != 0 || moveDirection.y != 0)
+        {
+            lastMoveDirection = moveDirection;
+        }
+    }
+
+    private void Anim()
+    {
+        animator.SetFloat("X",moveDirection.x);
+        animator.SetFloat("Y",moveDirection.y);
+        animator.SetFloat("LastX",lastMoveDirection.x);
+        animator.SetFloat("LastY",lastMoveDirection.y);
+        animator.SetFloat("AnimMoveMagnitude",moveDirection.magnitude);
+        
+    }
+    
+
 }
