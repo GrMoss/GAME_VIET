@@ -512,13 +512,13 @@ TextureImporter:
       name: Modern_UI_Style_1_19
       rect:
         serializedVersion: 2
-        x: 544
-        y: 579
-        width: 144
-        height: 109
+        x: 656
+        y: 656
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 4, y: 3, z: 3, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -4754,10 +4754,10 @@ TextureImporter:
       name: Modern_UI_Style_1_221
       rect:
         serializedVersion: 2
-        x: 544
+        x: 580
         y: 388
-        width: 144
-        height: 12
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6686,9 +6686,9 @@ TextureImporter:
       name: Modern_UI_Style_1_313
       rect:
         serializedVersion: 2
-        x: 420
+        x: 436
         y: 371
-        width: 24
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -7905,9 +7905,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 452
-        y: 323
+        y: 338
         width: 8
-        height: 24
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -7969,7 +7969,7 @@ TextureImporter:
         serializedVersion: 2
         x: 500
         y: 339
-        width: 24
+        width: 9
         height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -8429,10 +8429,10 @@ TextureImporter:
       name: Modern_UI_Style_1_396
       rect:
         serializedVersion: 2
-        x: 455
-        y: 326
-        width: 6
-        height: 6
+        x: 452
+        y: 323
+        width: 9
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -13486,6 +13486,216 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_637
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 656
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 3, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae37ad320f0614ff9b6d66cf9f944e03
+      internalID: 622481230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_638
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 656
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 0, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8ddfe2a66554e57a75b10cf64cfbe9
+      internalID: -1924065447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_639
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 3, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8686e9f01b143eaab74f0a6655461d
+      internalID: 401964601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_640
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 3, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10f4229394bd4b6186c86906906c14f
+      internalID: -1798109009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_641
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 3, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14946a2de2f3426fa576c3361a64a2f
+      internalID: 940957815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_642
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 464
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 3, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed885659b61643b4abcc80ebfe54ce6
+      internalID: 90575841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_643
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 387
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6110d0f11a3254a9c81b33f251ce21f2
+      internalID: 232912166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_644
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 387
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70947a38f509144e4bbe8202f3b87fe8
+      internalID: -333742273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_645
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 371
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8445dd57de2744ba49f0994756f7fd81
+      internalID: 799591796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_UI_Style_1_646
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 339
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e74e6ce662c504dbd90084c4f5e514ca
+      internalID: -786006298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -14095,7 +14305,17 @@ TextureImporter:
       Modern_UI_Style_1_634: 1183951242
       Modern_UI_Style_1_635: 1343985100
       Modern_UI_Style_1_636: -1815781077
+      Modern_UI_Style_1_637: 622481230
+      Modern_UI_Style_1_638: -1924065447
+      Modern_UI_Style_1_639: 401964601
       Modern_UI_Style_1_64: 1613975273
+      Modern_UI_Style_1_640: -1798109009
+      Modern_UI_Style_1_641: 940957815
+      Modern_UI_Style_1_642: 90575841
+      Modern_UI_Style_1_643: 232912166
+      Modern_UI_Style_1_644: -333742273
+      Modern_UI_Style_1_645: 799591796
+      Modern_UI_Style_1_646: -786006298
       Modern_UI_Style_1_65: -737865704
       Modern_UI_Style_1_66: 178027813
       Modern_UI_Style_1_67: -8357493
