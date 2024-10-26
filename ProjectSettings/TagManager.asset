@@ -4,10 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - T
-  - GT
-  - CB
   - BT
+  - CB_L
+  - CB_R
+  - GT_L
+  - GT_R
+  - T
   layers:
   - Default
   - TransparentFX

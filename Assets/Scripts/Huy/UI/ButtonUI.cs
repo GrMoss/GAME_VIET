@@ -15,14 +15,15 @@ public class ButtonUI : MonoBehaviour
          Application.Quit();
      }
 
-     public void ExitMenu()
+     public void ExitToMenu()
      {
          SceneManager.LoadScene("Login");
      }
      
-     public void ExitHome()
+     public void ExitToHome()
      {
          SceneManager.LoadScene("Home");
+         Time.timeScale = 1;
      }
  
      public void MiniGameDiCaKheo()
