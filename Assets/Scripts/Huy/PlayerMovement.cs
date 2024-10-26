@@ -45,12 +45,12 @@ public class PlayerMovememt : MonoBehaviour
     
     private void Move()
     {
-        Anim();
         moveDirection = moveActionToUse.action.ReadValue<Vector2>();
         if (moveDirection.x != 0 || moveDirection.y != 0)
         {
             lastMoveDirection = moveDirection;
         }
+        Anim();
     }
 
     private void Anim()
