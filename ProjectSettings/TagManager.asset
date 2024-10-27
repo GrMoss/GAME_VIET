@@ -10,6 +10,8 @@ TagManager:
   - GT_L
   - GT_R
   - T
+  - Box
+  - BoxTrigger
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - ColliderTilemap
+  - Player
   - 
   - 
   - 
