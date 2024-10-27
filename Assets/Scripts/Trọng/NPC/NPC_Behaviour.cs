@@ -7,16 +7,52 @@ public class NPC_Behaviour : MonoBehaviour
     public List<NPC_Checkpoints> NPC_Checkpoints;
 
     [SerializeField] private float speed;
+    [SerializeField] private bool isNotOldMan;
     private int targetIndex = 0;
     private bool isMoving = true;
-    private void Awake()
+
+    [SerializeField] private DialogData myDialogs;
+    List<string> dialogs = new List<string>();
+    private int dialogIndex;
+    [HideInInspector] public bool isTalking;
+    private void Start()
     {
-        
+        foreach (string dialog in myDialogs.dialogs)
+        {
+            dialogs.Add(dialog);
+        }
     }
 
     private void FixedUpdate()
     {
-        if(isMoving) MoveToNextCheckpoint();
+        if (isNotOldMan) if (isMoving) MoveToNextCheckpoint();
+    }
+
+    public void Interact()
+    {
+        isTalking = true;
+        NextDialog();
+    }
+
+    private void NextDialog()
+    {
+        if (dialogIndex < dialogs.Count) 
+        {
+            Debug.Log(dialogs[dialogIndex]);
+        }
+        dialogIndex++;
+        Invoke("StopDialog", 2f);
+        if (dialogIndex == dialogs.Count) EndDialog();
+    }
+    public void StopDialog()
+    {
+        isTalking = false;
+    }
+
+    private void EndDialog()
+    {
+        Debug.Log("End of Dialog here");
+        dialogIndex = 0;
     }
 
     void StayAtPlace()

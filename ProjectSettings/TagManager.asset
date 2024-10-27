@@ -10,6 +10,7 @@ TagManager:
   - GT_L
   - GT_R
   - T
+  - NPC
   layers:
   - Default
   - TransparentFX
