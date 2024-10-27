@@ -12,14 +12,28 @@ public class ResetScene : MonoBehaviour
         if(other.collider.CompareTag("Box"))
         {
             animator.SetBool("T",true);
+            StartVibration();
             StartCoroutine(Wait());
+
         }
     }
 
-    IEnumerator Wait()
+    private IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.5f);
         Time.timeScale = 0;
         SceneManager.LoadScene("DiCaKheo");
     }
+
+    public void StartVibration()
+    {
+        Handheld.Vibrate();
+        StartCoroutine(VibrationCoroutine());
+    }
+
+    private IEnumerator VibrationCoroutine()
+    {
+        yield return new WaitForSeconds(0.02f);
+    }
+
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnimPlayerOnStick : MonoBehaviour
 {
@@ -67,7 +68,20 @@ public class AnimPlayerOnStick : MonoBehaviour
 
     IEnumerator Wait()
     {
+        StartVibration();
         yield return new WaitForSeconds(wait);
         Time.timeScale = 0;
+        SceneManager.LoadScene("DiCaKheo");
+    }
+
+    public void StartVibration()
+    {
+        Handheld.Vibrate();
+        StartCoroutine(VibrationCoroutine());
+    }
+
+    private IEnumerator VibrationCoroutine()
+    {
+        yield return new WaitForSeconds(0.02f);
     }
 }
