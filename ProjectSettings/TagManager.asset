@@ -12,6 +12,7 @@ TagManager:
   - T
   - Box
   - BoxTrigger
+  - NPC
   layers:
   - Default
   - TransparentFX
