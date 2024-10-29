@@ -7,6 +7,11 @@ public class InputName : MonoBehaviour
 {
     [SerializeField] TMP_InputField inputFieldName;
 
+      void Start()
+    {
+        PlayerPrefs.SetString("GlobalName","");
+    }
+    
     private void FixedUpdate() 
     {
         SetNamePlayer(inputFieldName.text);

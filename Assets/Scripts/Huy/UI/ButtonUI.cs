@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class ButtonUI : MonoBehaviour
 {
-    private void FixedUpdate() 
-    {
-             Debug.Log(PlayerPrefs.GetString("GlobalName"));
-    }
-     public void ButtonPlay()
+
+    public void ButtonPlay()
      {
          SceneManager.LoadScene("Home");
      }
