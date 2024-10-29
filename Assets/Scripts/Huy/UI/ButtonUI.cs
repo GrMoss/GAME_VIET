@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ButtonUI : MonoBehaviour
 {
+    private void FixedUpdate() 
+    {
+             Debug.Log(PlayerPrefs.GetString("GlobalName"));
+    }
      public void ButtonPlay()
      {
          SceneManager.LoadScene("Home");
