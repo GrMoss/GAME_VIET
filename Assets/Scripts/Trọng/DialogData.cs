@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogData : MonoBehaviour
 {
-    [SerializeField] private Sprite mySprite;
-    [SerializeField] private string myName;
+    public Sprite mySprite;
+    public string myName;
     public List<string> dialogs;
 }

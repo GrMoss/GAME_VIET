@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class NPC_Behaviour : MonoBehaviour
 {
@@ -16,9 +19,13 @@ public class NPC_Behaviour : MonoBehaviour
     [SerializeField] private DialogData myDialogs;
     List<string> dialogs = new List<string>();
     private int dialogIndex;
-    [HideInInspector] public bool isTalking;
+    [HideInInspector] public bool isTalkable = true;
     [HideInInspector] public bool isInteractable;
     [SerializeField] private GameObject interactableSymbol;
+
+    public TextMeshProUGUI dialogText;
+    public TextMeshProUGUI NPC_Name;
+    public Image NPC_Sprite;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -40,6 +47,8 @@ public class NPC_Behaviour : MonoBehaviour
 
     public void Interact()
     {
+        NPC_Name.text = myDialogs.myName;
+        NPC_Sprite.sprite = myDialogs.mySprite;
         NextDialog();
     }
 
@@ -47,7 +56,7 @@ public class NPC_Behaviour : MonoBehaviour
     {
         if (dialogIndex < dialogs.Count) 
         {
-            Debug.Log(dialogs[dialogIndex]);
+            dialogText.text = dialogs[dialogIndex];
         }
         isInteractable = false;
         dialogIndex++;
@@ -55,16 +64,15 @@ public class NPC_Behaviour : MonoBehaviour
     }
     private void StopDialog()
     {
-        isTalking = false;
         isInteractable = true;
         if (dialogIndex == dialogs.Count) EndDialog();
     }
 
     private void EndDialog()
     {
-        Debug.Log("End of Dialog here");
         dialogIndex = 0;
         interactableSymbol.SetActive(false);
+        TalkToNPC.isEndOfDialog = true;
         isInteractable = false;
     }
 
