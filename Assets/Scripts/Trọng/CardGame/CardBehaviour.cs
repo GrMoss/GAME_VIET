@@ -35,7 +35,7 @@ public class CardBehaviour : MonoBehaviour
     }
     public void TriggerFlipAnimation()
     {
-        if (clickable && cardData.multiPickAmount < 4)
+        if (clickable && cardData.multiPickAmount < 5)
         {
             ani.SetTrigger("Flip");
             clickable = false;
@@ -55,7 +55,7 @@ public class CardBehaviour : MonoBehaviour
     }
     IEnumerator TriggerAnswer(bool isCorrect)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         if (isCorrect)
         {
             ani.SetTrigger("Correct");
