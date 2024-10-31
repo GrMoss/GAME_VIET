@@ -1,36 +1,179 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
+using Cinemachine;
+using System;
+
 
 public class Player : MonoBehaviour
 {
-    public int A;
-    public int B;
-    public List<int> items = new List<int>();
-    public int score;
+    public static Player Instance { get; private set; }
 
+    private int Id;
+    private int Gender;
+    private string PlayerName;
+    private int[] IdBV;
+    private float[] PositionPlayer = new float[3]; // Khởi tạo mảng cho PositionPlayer
+    private List<Item_Data> Inventory = new List<Item_Data>();  // Danh sách Item_Data
+
+    private DateTime SaveTime;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        // Kiểm tra và khởi tạo vị trí nếu chưa được thiết lập
+        if (PositionPlayer == null || PositionPlayer.Length < 3)
+        {
+            PositionPlayer = new float[3] { -6.1f, -0.9f, 0f };
+        }   
+    }
+
+    public int id
+    {
+        get { return Id; }
+        set { Id = value; } 
+    }
+    public string playerName
+    {
+        get { return PlayerName; }
+        set { PlayerName = value; } 
+    }
+
+    public int gender
+    {
+        get { return Gender; }
+        set { Gender = value; }
+    }
+
+    public int[] idBVArray
+    {
+        get { return IdBV; }
+        set { IdBV = value; }
+    }
+
+    public float[] positionPlayer
+    {
+        get { return PositionPlayer; }
+        set { PositionPlayer = value; }
+    }
+
+    public List<Item_Data> inventory
+    {
+        get { return Inventory; }
+        set { Inventory = value; } 
+    }
+
+    public DateTime saveTime
+    {
+        get { return SaveTime; }
+        set { SaveTime = value; }
+    }
+
+    private void FixedUpdate() 
+    {
+        Debug.Log("Gender: " + Gender);
+        Debug.Log("Player Name: " + PlayerName);
+        Debug.Log("Id: " + Id);
+    }
+
+    // Phương thức để sinh ID ngẫu nhiên
+    public void GenerateRandomId()
+    {   
+        System.Random random = new System.Random();
+        Id = random.Next(100000, 999999);
+    }
+
+    // Lưu thông tin người chơi
     public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
+        saveTime = DateTime.Now;
     }
 
-    public void LoadPlayer()
+    // Tải thông tin người chơi theo ID
+    public void LoadPlayerById(int playerId)
     {
-        PlayerData data = SaveSystem.LoadPlayer();
-        
+        PlayerData data = SaveSystem.LoadPlayer(playerId);
         if (data != null)
         {
-            A = data.A;
-            B = data.B;
-            items = new List<int>(data.items);
-            score = data.score;
+            // Gán dữ liệu tải về cho instance người chơi
+            Id = data.Id;
+            PlayerName = data.PlayerName;
+            Gender = data.Gender;
+            IdBV = data.IdBV;
+            PositionPlayer = data.PositionPlayer;
+            SaveTime = data.SaveTime; 
 
-            Vector3 position;
-            position.x = data.position[0];
-            position.y = data.position[1];
-            position.z = data.position[2];
-            transform.position = position;
+            // Đặt vị trí
+            transform.position = new Vector3(data.PositionPlayer[0], data.PositionPlayer[1], data.PositionPlayer[2]);
+
+            // Tải kho đồ
+            Inventory = data.Inventory;
+        }
+        else
+        {
+            Debug.LogError("Không thể tải thông tin người chơi với ID: " + playerId);
         }
     }
+
+    // lay all player
+    public void DisplayAllPlayers()
+    {
+        List<PlayerData> allPlayers = SaveSystem.LoadAllPlayers();
+        foreach (PlayerData playerData in allPlayers)
+        {
+            Debug.Log("ID: " + playerData.Id + ", Name: " + playerData.PlayerName + ", Gender: " + playerData.Gender + "Save Time; " + playerData.SaveTime);
+        }
+    }
+
+    // Lấy toàn bộ dữ liệu trong Inventory
+    public List<Item_Data> GetAllItems()
+    {
+        return Inventory;
+    }
+
+    // Thêm hoặc cập nhật Item theo IdItem
+    public void AddOrUpdateItemById(int idItem, int quantity)
+    {
+        Item_Data item = Inventory.FirstOrDefault(i => i.IdItem == idItem);
+        if (item != null)
+        {
+            item.QuantityItem += quantity;  // Cộng dồn số lượng
+        }
+        else
+        {
+            Inventory.Add(new Item_Data(idItem, quantity));  // Thêm mới nếu chưa có
+        }
+    }
+
+    // Thay đổi số lượng Item theo IdItem
+    public void UpdateItemQuantityById(int idItem, int newQuantity)
+    {
+        Item_Data item = Inventory.FirstOrDefault(i => i.IdItem == idItem);
+        if (item != null)
+        {
+            item.QuantityItem = newQuantity;  // Cập nhật số lượng
+        }
+    }
+
+    // Lấy dữ liệu Item theo IdItem
+    public Item_Data GetItemById(int idItem)
+    {
+        return Inventory.FirstOrDefault(item => item.IdItem == idItem);
+    }
+
+    internal class Interact
+    {
+    }
 }
+
