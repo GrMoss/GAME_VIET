@@ -32,4 +32,11 @@ public class ButtonUI : MonoBehaviour
      {
          SceneManager.LoadScene("DiCaKheo");
      }
+
+     public void MiniGameTimLeVat()
+     {
+         SceneManager.LoadScene("TimLeVat");
+         
+     }
 }
+
