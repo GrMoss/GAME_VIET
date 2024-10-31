@@ -38,6 +38,7 @@ public class TalkToNPC : MonoBehaviour
     {
         if (collision.CompareTag("NPC")) interactButton.SetActive(false);
     }
+
     public void TalkWithNPC()
     {
         if (newNPC.isInteractable == true)
@@ -54,6 +55,7 @@ public class TalkToNPC : MonoBehaviour
             input.enabled = true;
             isEndOfDialog = false;
             dialogPanel.SetActive(false);
+            interactButton.SetActive(false);
         }
     }
 }
