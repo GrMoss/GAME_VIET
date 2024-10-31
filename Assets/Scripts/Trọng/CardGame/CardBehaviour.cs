@@ -16,6 +16,7 @@ public class CardBehaviour : MonoBehaviour
     private Button pickButton;
     private int itemIndex;
     Animator ani;
+    private bool clickable = true;
     private void Awake()
     {
         cardData = GetComponentInParent<CardData>();
@@ -34,7 +35,12 @@ public class CardBehaviour : MonoBehaviour
     }
     public void TriggerFlipAnimation()
     {
-        ani.SetTrigger("Flip");
+        if (clickable && cardData.multiPickAmount < 5)
+        {
+            ani.SetTrigger("Flip");
+            clickable = false;
+            cardData.multiPickAmount++;
+        }
     }
     public void FlipCardUp()
     {
@@ -42,25 +48,26 @@ public class CardBehaviour : MonoBehaviour
         cardData.cardBehaviours[cardData.pickIndex] = this;
         cardData.CountCorrectItem(cardData.itemData[itemIndex].itemName, itemIndex);
     }
+
     public void StartTrigger(bool isCorrect)
     {
         StartCoroutine(TriggerAnswer(isCorrect));
     }
     IEnumerator TriggerAnswer(bool isCorrect)
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
         if (isCorrect)
         {
             ani.SetTrigger("Correct");
             yield return new WaitForSeconds(1f);
             ChoseAnItem();
-            cardData.correctPick = false;
         }
         else ani.SetTrigger("Wrong");
     }
     public void FlipCardDown()
     {
         QuickSpriteChange();
+        cardData.multiPickAmount--;
     }
 
     private void QuickSpriteChange()
@@ -70,6 +77,11 @@ public class CardBehaviour : MonoBehaviour
         cardImage.sprite = cardSprite[cardIndex];
         isItemActive = !isItemActive;
         itemObject.SetActive(isItemActive);
+        Invoke("Clickable", .5f);
+    }
+    public void Clickable()
+    {
+        clickable = true;
         pickButton.interactable = !isItemActive;
     }
 }

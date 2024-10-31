@@ -8,6 +8,7 @@ public class CardData : MonoBehaviour
     public List<ItemData> itemData = new List<ItemData>();
     public List<TextMeshProUGUI> itemCountText = new List<TextMeshProUGUI>();
     int[] itemCount = new int[6];
+    public int multiPickAmount;
     private string firstPick, secondPick;
     [HideInInspector] public int pickIndex;
     [HideInInspector] public bool correctPick;
@@ -21,11 +22,11 @@ public class CardData : MonoBehaviour
     {
         if (cardBehaviours[0] != null && cardBehaviours[1] != null)
         {
-            Debug.Log("OK");
             cardBehaviours[0].StartTrigger(correctPick);
             cardBehaviours[1].StartTrigger(correctPick);
             cardBehaviours[0] = null;
             cardBehaviours[1] = null;
+            correctPick = false;
         }
     }
 
@@ -50,9 +51,7 @@ public class CardData : MonoBehaviour
                 itemCount[itemIndex]++;
                 correctPick = true;
                 UpdateItemCount();
-                Debug.Log("Correct");
             }
-            else Debug.Log("Wrong");
         }
         pickIndex++;
         if (pickIndex > 1)
