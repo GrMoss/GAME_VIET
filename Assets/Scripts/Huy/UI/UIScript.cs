@@ -5,16 +5,13 @@ using TMPro;
 
 public class UIScript : MonoBehaviour
 {
-  
+    [SerializeField] private GameObject[] avatar;
     public TMP_Text textName;
 
     private void Start() {
-        textName.text = PlayerPrefs.GetString("GlobalName");   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        textName.text = Player.Instance.playerName;
+        avatar[Player.Instance.gender].SetActive(true);
         
     }
+
 }

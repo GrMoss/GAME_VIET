@@ -8,9 +8,9 @@ public class ButtonUI : MonoBehaviour
 {
 
     public void ButtonPlay()
-     {
-         SceneManager.LoadScene("Home");
-     }
+    {
+        SceneManager.LoadScene("Home");
+    }
 
      public void Exit()
      {

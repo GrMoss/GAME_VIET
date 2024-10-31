@@ -3,81 +3,89 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Unity.VisualScripting;
-using System.Security.Cryptography;
-using System.Text;
 
 public class SaveSystem : MonoBehaviour
 {
-    private static readonly byte[] key = Encoding.UTF8.GetBytes("your32charSecretKeyHere012345678901"); // Đảm bảo có 32 ký tự
-    private static readonly byte[] iv = Encoding.UTF8.GetBytes("your16charIVHere"); // Đảm bảo có 16 ký tự
-
-    public static void SavePlayer(Player player)
+    public static SaveSystem Instance { get; private set; }
+         private void Awake()
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        using (MemoryStream memoryStream = new MemoryStream())
+        if (Instance == null)
         {
-            PlayerData data = new PlayerData(player);
-            formatter.Serialize(memoryStream, data);
-
-            byte[] encryptedData = Encrypt(memoryStream.ToArray());
-            File.WriteAllBytes(Application.persistentDataPath + "/playerData", encryptedData);
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
-    public static PlayerData LoadPlayer()
+
+    // Lưu dữ liệu người chơi theo ID người chơi
+    public static void SavePlayer(Player player)
     {
-        string path = Application.persistentDataPath + "/playerData";
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/playerData_" + player.id + ".dat"; // Tạo tệp duy nhất theo ID người chơi
+        
+        using (FileStream fileStream = new FileStream(path, FileMode.Create))
+        {
+            PlayerData data = new PlayerData(player);
+            formatter.Serialize(fileStream, data);
+        }
+    }
+
+
+    // Tải dữ liệu người chơi theo ID người chơi
+    public static PlayerData LoadPlayer(int playerId)
+    {
+        string path = Application.persistentDataPath + "/playerData_" + playerId + ".dat"; // Tạo tệp duy nhất theo ID người chơi
         if (File.Exists(path))
         {
-            byte[] encryptedData = File.ReadAllBytes(path);
-            byte[] decryptedData = Decrypt(encryptedData);
-
             BinaryFormatter formatter = new BinaryFormatter();
-            using (MemoryStream memoryStream = new MemoryStream(decryptedData))
+            using (FileStream fileStream = new FileStream(path, FileMode.Open))
             {
-                PlayerData data = formatter.Deserialize(memoryStream) as PlayerData;
+                PlayerData data = formatter.Deserialize(fileStream) as PlayerData;
                 return data;
             }
         }
         else
         {
-            Debug.LogError("Save file not found in " + path);
+            Debug.LogError("Tệp lưu không tồn tại tại " + path);
             return null;
         }
     }
 
-    private static byte[] Encrypt(byte[] data)
+    // Xóa dữ liệu người chơi theo ID
+    public static void DeletePlayer(int playerId)
     {
-        using (Aes aes = Aes.Create())
+        string path = Application.persistentDataPath + "/playerData_" + playerId + ".dat"; // Tạo tệp duy nhất theo ID người chơi
+        if (File.Exists(path))
         {
-            aes.Key = key;
-            aes.IV = iv;
-
-            using (MemoryStream memoryStream = new MemoryStream())
-            using (CryptoStream cryptoStream = new CryptoStream(memoryStream, aes.CreateEncryptor(), CryptoStreamMode.Write))
-            {
-                cryptoStream.Write(data, 0, data.Length);
-                cryptoStream.FlushFinalBlock();
-                return memoryStream.ToArray();
-            }
+            File.Delete(path);
+            Debug.Log("Xóa dữ liệu người chơi với ID: " + playerId);
+        }
+        else
+        {
+            Debug.LogError("Dữ liệu người chơi không tồn tại để xóa.");
         }
     }
 
-    private static byte[] Decrypt(byte[] data)
+    // Tải thông tin của tất cả người chơi
+    public static List<PlayerData> LoadAllPlayers()
     {
-        using (Aes aes = Aes.Create())
-        {
-            aes.Key = key;
-            aes.IV = iv;
+        List<PlayerData> allPlayerData = new List<PlayerData>();
+        string[] files = Directory.GetFiles(Application.persistentDataPath, "playerData_*.dat");
 
-            using (MemoryStream memoryStream = new MemoryStream())
-            using (CryptoStream cryptoStream = new CryptoStream(memoryStream, aes.CreateDecryptor(), CryptoStreamMode.Write))
+        foreach (string file in files)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream fileStream = new FileStream(file, FileMode.Open))
             {
-                cryptoStream.Write(data, 0, data.Length);
-                cryptoStream.FlushFinalBlock();
-                return memoryStream.ToArray();
+                PlayerData data = formatter.Deserialize(fileStream) as PlayerData;
+                allPlayerData.Add(data);
             }
         }
+
+        return allPlayerData;
     }
 }
