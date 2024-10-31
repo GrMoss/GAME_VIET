@@ -14,12 +14,6 @@ public class PiontDiCaKheo : MonoBehaviour
         Point = 0;
     }
 
-
-    void Update()
-    {
-    //    Debug.Log(Point);
-    }
-
     private void FixedUpdate() 
     {
         textPoint.text = Point.ToString();
