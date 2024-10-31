@@ -10,6 +10,9 @@ public class Save : MonoBehaviour
     {
         Debug.Log("IsWork1");
         Player.Instance.SavePlayer(); 
+        Player.Instance.positionPlayer[0] = transform.position.x;
+        Player.Instance.positionPlayer[1] = transform.position.y;
+        Player.Instance.positionPlayer[2] = transform.position.z;
     }
 
      public void ButtonLoad()
