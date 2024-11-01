@@ -6,36 +6,36 @@ using UnityEngine.SceneManagement;
 
 public class AnimPlayerOnStick : MonoBehaviour
 {
-    public Animator animator;
-    public GameObject player;
+    public Animator[] animator;
     public float wait = 0.3f;
+    int characterIndex = Player.Instance.gender;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("T"))
         {
-            animator.SetBool("T",true);
+            animator[characterIndex].SetBool("T",true);
             StartCoroutine(Wait());
         }
 
         if (other.CompareTag("CB_L"))
         {
-            animator.SetBool("CB_L",true);
+            animator[characterIndex].SetBool("CB_L",true);
         }
         
         if (other.CompareTag("CB_R"))
         {
-            animator.SetBool("CB_R",true);
+            animator[characterIndex].SetBool("CB_R",true);
         }
         
         if (other.CompareTag("GT_L"))
         {
-            animator.SetBool("GT_L",true);
+            animator[characterIndex].SetBool("GT_L",true);
         }
         
         if (other.CompareTag("GT_R"))
         {
-            animator.SetBool("GT_R",true);
+            animator[characterIndex].SetBool("GT_R",true);
         }
     }
 
@@ -45,22 +45,22 @@ public class AnimPlayerOnStick : MonoBehaviour
         {
             if (other.CompareTag("CB_L"))
             {
-                animator.SetBool("CB_L",false);
+                animator[characterIndex].SetBool("CB_L",false);
             }
         
             if (other.CompareTag("CB_R"))
             {
-                animator.SetBool("CB_R",false);
+                animator[characterIndex].SetBool("CB_R",false);
             }
         
             if (other.CompareTag("GT_L"))
             {
-                animator.SetBool("GT_L",false);
+                animator[characterIndex].SetBool("GT_L",false);
             }
         
             if (other.CompareTag("GT_R"))
             {
-                animator.SetBool("GT_R",false);
+                animator[characterIndex].SetBool("GT_R",false);
             }
         }
         
