@@ -10816,7 +10816,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &187032310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10847,6 +10847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardBV: {fileID: 0}
   canvaPTC: {fileID: 0}
+  conLat: {fileID: 0}
   textPoint: {fileID: 0}
   piontWinGame: 0
 --- !u!114 &187032312
@@ -11056,6 +11057,7 @@ Transform:
   m_Children:
   - {fileID: 1330339443}
   - {fileID: 679302660}
+  - {fileID: 1767822521}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &281333127
@@ -11072,14 +11074,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointA: {fileID: 1330339443}
   pointB: {fileID: 679302660}
+  pointC: {fileID: 1767822521}
   spawnableObjects:
-  - {fileID: 7803195796027629097, guid: a8f71033bd1e9466caa0cc47b6cad9db, type: 3}
-  - {fileID: 5778519661054606811, guid: 07794496cf03440cdb58161d9f2e531e, type: 3}
-  - {fileID: 5134928053534220297, guid: 3957dfe99c88f4f958fd93afdde95031, type: 3}
+  - {fileID: 6262772264182161229, guid: b054e6ac64af547d1b5a52a22c26b2c3, type: 3}
+  - {fileID: 8774236834898520183, guid: 92aea266ceeb14def8b302cb0a60431a, type: 3}
+  - {fileID: 5137429866067626867, guid: 10c62f2886aed436cbb6356effb73c86, type: 3}
+  - {fileID: 1633882553903961779, guid: f34f273abfea14176a88317d50dbdbcf, type: 3}
+  - {fileID: 2460624415277955266, guid: 9e46dd2ec36dc4776a79fcdd277d03bd, type: 3}
+  - {fileID: 5375615362216072830, guid: ff94cca09b10d45ee9e270b6c7b002fa, type: 3}
+  - {fileID: 1956063690206377820, guid: 1bc58af7145b34e21bb8168ff823ba95, type: 3}
+  - {fileID: 2488514548449173546, guid: 27895b10292f44aa7bbeb1e9c5b7242a, type: 3}
+  - {fileID: 1436757386347366931, guid: f2d253501579d4bacbcfda3c40b7802e, type: 3}
   - {fileID: 2390299071064445223, guid: 4f4f1c1f5a832427c8ffc98f5bb65a67, type: 3}
-  - {fileID: 3985360641003391143, guid: 5bb304aa023ae4c92aacbe4d8ad5bbe6, type: 3}
   spawnRandom: 1
-  spawnCount: 10
+  spawnLocation: 1
+  spawnCount: 2
   unlimitedSpawn: 1
   fixedIndex: 0
   spawnInterval: 4
@@ -12024,7 +12033,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &428518251
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13319,7 +13328,7 @@ Transform:
   m_GameObject: {fileID: 679302659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.11, y: -7.57, z: 0}
+  m_LocalPosition: {x: 40.350002, y: -7.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18623,7 +18632,7 @@ Transform:
   m_GameObject: {fileID: 1330339442}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.25, y: -4.26, z: 0}
+  m_LocalPosition: {x: 40.49, y: -4.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21165,6 +21174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardBV: {fileID: 187032309}
   canvaPTC: {fileID: 428518250}
+  conLat: {fileID: 0}
   textPoint: {fileID: 2076704621}
   piontWinGame: 50
 --- !u!114 &1764828400
@@ -21183,6 +21193,37 @@ MonoBehaviour:
   - {fileID: 1896530039}
   - {fileID: 851753774}
   textName: {fileID: 8996976}
+--- !u!1 &1767822520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767822521}
+  m_Layer: 0
+  m_Name: PointC
+  m_TagString: Untagged
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1767822521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767822520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.350002, y: -5.91, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 281333126}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1785694425
 GameObject:
   m_ObjectHideFlags: 0

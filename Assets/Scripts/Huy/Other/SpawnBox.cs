@@ -1,43 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq; // Đảm bảo thêm thư viện này
+using System.Linq;
 using UnityEngine;
 
 public class SpawnBox : MonoBehaviour
 {
     public enum SpawnDirection
     {
-       Right, Left, Up, Down
+        Right, Left, Up, Down
+    }
+
+    public enum SpawnLocation
+    {
+        RandomInAtoB, // Vị trí ngẫu nhiên trong khoảng từ A đến B
+        PointC // Tại vị trí C
     }
 
     [Header("Spawn Points")]
     public Transform pointA; 
     public Transform pointB; 
+    public Transform pointC; // Điểm spawn C mới
 
     [Header("Spawn Objects")]
     public List<GameObject> spawnableObjects = new List<GameObject>();
 
     [Header("Spawn Settings")]
     public bool spawnRandom = true;
+    public SpawnLocation spawnLocation; // Tùy chọn vị trí spawn
     [Range(0, 100)] public int spawnCount = 10;
     public bool unlimitedSpawn = false;
     public int fixedIndex = 0;
     public float spawnInterval = 1f;
     [SerializeField] private float objectActiveTime = 3f;
 
-    // Tốc độ spawn được điều chỉnh qua Inspector
     public float spawnSpeed = 2f; // Tốc độ di chuyển của object khi được spawn
-
-    // Hướng spawn
     public SpawnDirection spawnDirection;
 
     private Queue<GameObject> objectPool = new Queue<GameObject>();
 
     void Start()
     {
-        if (pointA == null || pointB == null || spawnableObjects.Count == 0)
+        if (spawnableObjects.Count == 0 || 
+            (spawnLocation == SpawnLocation.RandomInAtoB && (pointA == null || pointB == null)) ||
+            (spawnLocation == SpawnLocation.PointC && pointC == null))
         {
-            Debug.LogError("Vui lòng thiết lập các điểm A, B và các đối tượng để spawn.");
+            Debug.LogError("Vui lòng thiết lập các điểm spawn và các đối tượng để spawn.");
             return;
         }
 
@@ -65,8 +72,23 @@ public class SpawnBox : MonoBehaviour
 
         while (unlimitedSpawn || spawnedItems < spawnCount)
         {
-            float randomPosition = Random.Range(0f, 1f);
-            Vector3 spawnPoint = Vector3.Lerp(pointA.position, pointB.position, randomPosition);
+            Vector3 spawnPoint;
+
+            // Chọn vị trí spawn dựa trên tùy chọn
+            if (spawnLocation == SpawnLocation.RandomInAtoB && pointA != null && pointB != null)
+            {
+                float randomPosition = Random.Range(0f, 1f);
+                spawnPoint = Vector3.Lerp(pointA.position, pointB.position, randomPosition);
+            }
+            else if (spawnLocation == SpawnLocation.PointC && pointC != null)
+            {
+                spawnPoint = pointC.position;
+            }
+            else
+            {
+                Debug.LogWarning("Điểm spawn không hợp lệ.");
+                yield break; // Kết thúc vòng lặp nếu không có điểm spawn hợp lệ
+            }
 
             GameObject objectToSpawn = GetObjectFromPool();
             if (objectToSpawn != null)
@@ -76,7 +98,7 @@ public class SpawnBox : MonoBehaviour
 
                 // Thiết lập tốc độ và hướng cho SpawnableObject
                 SpawnableObject spawnableObj = objectToSpawn.GetComponent<SpawnableObject>();
-                spawnableObj.SetSpeedAndDirection(GetDirectionVector(), spawnSpeed); // Sử dụng tốc độ đã chỉnh sửa
+                spawnableObj.SetSpeedAndDirection(GetDirectionVector(), spawnSpeed);
 
                 StartCoroutine(ReturnToPoolAfterTime(objectToSpawn, objectActiveTime));
             }
@@ -92,14 +114,10 @@ public class SpawnBox : MonoBehaviour
     {
         if (objectPool.Count > 0)
         {
-            // Lấy tất cả các đối tượng trong queue vào một danh sách
             List<GameObject> availableObjects = new List<GameObject>(objectPool);
-            // Chọn ngẫu nhiên một đối tượng từ danh sách
             int randomIndex = Random.Range(0, availableObjects.Count);
             GameObject selectedObject = availableObjects[randomIndex];
-            
-            // Đảm bảo rằng chúng ta xóa đối tượng đã chọn khỏi queue
-            objectPool = new Queue<GameObject>(objectPool.Where(obj => obj != selectedObject)); 
+            objectPool = new Queue<GameObject>(objectPool.Where(obj => obj != selectedObject));
             return selectedObject;
         }
         return null;
@@ -119,19 +137,18 @@ public class SpawnBox : MonoBehaviour
 
     private Vector2 GetDirectionVector()
     {
-        // Chọn hướng dựa trên giá trị trong Inspector
         switch (spawnDirection)
         {
             case SpawnDirection.Right:
-                return Vector2.right; // Hướng x
+                return Vector2.right;
             case SpawnDirection.Left:
-                return Vector2.left;  // Hướng -x
+                return Vector2.left;
             case SpawnDirection.Up:
-                return Vector2.up;    // Hướng y
+                return Vector2.up;
             case SpawnDirection.Down:
-                return Vector2.down;  // Hướng -y
+                return Vector2.down;
             default:
-                return Vector2.zero;   // Mặc định
+                return Vector2.zero;
         }
     }
 }

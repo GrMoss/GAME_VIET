@@ -10,6 +10,8 @@ public class PiontDiCaKheo : MonoBehaviour
     public GameObject cardBV;
     public GameObject canvaPTC;
 
+    public GameObject conLat;
+
     public TMP_Text textPoint;
     public static int Point;
     public int piontWinGame = 10;
@@ -19,6 +21,7 @@ public class PiontDiCaKheo : MonoBehaviour
         Point = 0;
         cardBV.SetActive(false);
         canvaPTC.SetActive(false);
+        conLat.SetActive(true);
 
     }
 
@@ -35,7 +38,7 @@ public class PiontDiCaKheo : MonoBehaviour
         {
             cardBV.SetActive(true);
             canvaPTC.SetActive(true);
-
+            conLat.SetActive(false);
         }
     }
 }
