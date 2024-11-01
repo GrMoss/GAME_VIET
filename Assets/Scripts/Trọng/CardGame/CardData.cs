@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CardData : MonoBehaviour
 {
@@ -14,6 +16,10 @@ public class CardData : MonoBehaviour
     [HideInInspector] public bool correctPick;
     [HideInInspector] public bool onePair;
     [HideInInspector] public CardBehaviour[] cardBehaviours = new CardBehaviour[2];
+    public Clock clock;
+    public GameComplete gameComplete;
+    public GameObject resultPanel;
+    public List<GameObject> cards;
     private void Start()
     {
         UpdateItemCount();
@@ -34,7 +40,15 @@ public class CardData : MonoBehaviour
     {
         for (int i = 0; i < 6; i++)
         {
-            if (itemCount[i] > itemData[i].wantedAmount) itemCount[i] = itemData[i].wantedAmount;
+            if (itemCount[i] >= itemData[i].wantedAmount)
+            {
+                itemCountText[i].color = Color.green;
+            }
+            if (itemCount[i] > itemData[i].wantedAmount)
+            {
+                itemCount[i] = itemData[i].wantedAmount;
+                clock.timer += 3;
+            }
             itemCountText[i].text = ": " + itemCount[i] + " / " + itemData[i].wantedAmount;
         }
     }
@@ -51,6 +65,7 @@ public class CardData : MonoBehaviour
                 itemCount[itemIndex]++;
                 correctPick = true;
                 UpdateItemCount();
+                CheckComplete();
             }
         }
         pickIndex++;
@@ -60,6 +75,34 @@ public class CardData : MonoBehaviour
             firstPick = null;
             secondPick = null;
         }
+    }
+    public void CheckComplete()
+    {
+        int checker = 0;
+        for (int i = 0; i < 6; i++)
+        {
+            if (itemCount[i] >= itemData[i].wantedAmount) checker++;
+        }
+        if (checker == 6)
+        {
+            StopGame();
+            gameComplete.isSuccess = true;
+            clock.isGameRunning = false;
+        }
+    }
+    public void StopGame()
+    {
+        foreach (var card in cards)
+        {
+            Button button = card.GetComponent<Button>();
+            button.interactable = false;
+        }
+        Invoke("ShowResult", 2f);
+    }
+
+    private void ShowResult()
+    {
+        resultPanel.SetActive(true);
     }
 }
 
