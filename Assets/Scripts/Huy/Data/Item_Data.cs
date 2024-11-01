@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Item_Data 
 {
+    internal Sprite ItemImage;
 
     public int IdItem {get; set;}
     public int QuantityItem {get; set;}

@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     private float[] PositionPlayer = new float[3]; // Khởi tạo mảng cho PositionPlayer
     private List<Item_Data> Inventory = new List<Item_Data>();  // Danh sách Item_Data
 
+    private Dictionary<int, bool> CompletedLevels = new Dictionary<int, bool>();
+
     private DateTime SaveTime;
 
     private void Awake()
@@ -79,6 +81,26 @@ public class Player : MonoBehaviour
         set { SaveTime = value; }
     }
 
+     public Dictionary<int, bool> completedLevels
+    {
+        get { return CompletedLevels; }
+        set { CompletedLevels = value; }
+    }
+
+    // đánh dấu màn chơi là hoàn tất.
+    public void MarkLevelAsCompleted(int levelId)
+    {
+        if (CompletedLevels.ContainsKey(levelId))
+            CompletedLevels[levelId] = true;
+        else
+            CompletedLevels.Add(levelId, true);
+    }
+    // kiểm tra xem một màn chơi có hoàn tất hay chưa.
+    public bool IsLevelCompleted(int levelId)
+    {
+        return CompletedLevels.ContainsKey(levelId) && CompletedLevels[levelId];
+    }
+
     private void FixedUpdate() 
     {
         // Debug.Log("Gender: " + Gender);
@@ -101,23 +123,20 @@ public class Player : MonoBehaviour
     }
 
     // Tải thông tin người chơi theo ID
-    public void LoadPlayerById(int playerId)
+   public void LoadPlayerById(int playerId)
     {
         PlayerData data = SaveSystem.LoadPlayer(playerId);
         if (data != null)
         {
-            // Gán dữ liệu tải về cho instance người chơi
             Id = data.Id;
             PlayerName = data.PlayerName;
             Gender = data.Gender;
             IdBV = data.IdBV;
             PositionPlayer = data.PositionPlayer;
-            SaveTime = data.SaveTime; 
+            SaveTime = data.SaveTime;
+            CompletedLevels = data.CompletedLevels ?? new Dictionary<int, bool>();
 
-            // Đặt vị trí
             transform.position = new Vector3(data.PositionPlayer[0], data.PositionPlayer[1], data.PositionPlayer[2]);
-
-            // Tải kho đồ
             Inventory = data.Inventory;
         }
         else

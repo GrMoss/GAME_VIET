@@ -12,7 +12,7 @@ public class PlayerData
     public float[] PositionPlayer;
     public List<Item_Data> Inventory;
     public DateTime SaveTime;
-
+    public Dictionary<int, bool> CompletedLevels;
     public PlayerData(Player player)
     {
         Id = player.id;
@@ -27,5 +27,6 @@ public class PlayerData
         };
         Inventory = new List<Item_Data>(player.inventory);
         SaveTime = DateTime.Now;
+        CompletedLevels = new Dictionary<int, bool>(player.completedLevels);
     }
 }
