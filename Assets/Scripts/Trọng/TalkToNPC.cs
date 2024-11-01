@@ -2,27 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class TalkToNPC : MonoBehaviour
 {
-    [SerializeField] private GameObject interactButton;
+    private GameObject interactButton;
     private NPC_Behaviour newNPC;
-    public GameObject dialogPanel;
+    private GameObject dialogPanel;
     public static bool isEndOfDialog;
+    Button interact;
+    Button dialog;
     PlayerInput input;
     private void Awake()
     {
-        input = GetComponent<PlayerInput>();
+        //input = GetComponent<PlayerInput>();
+        interactButton = GameObject.Find("InteractButton");
+        dialogPanel = GameObject.Find("Dialog Panel");
+        newNPC = GetComponent<NPC_Behaviour>();
+        interact = GameObject.FindWithTag("Interact").GetComponent<Button>();
+        dialog = GameObject.FindWithTag("Dialog").GetComponent<Button>();
     }
     private void Start()
     {
         interactButton.SetActive(false);
+        dialogPanel.SetActive(false);
     }
     private void OnTriggerStay2D(Collider2D collision)
     { 
-        if (collision.CompareTag("NPC"))
+        if (collision.CompareTag("Player"))
         {
-            newNPC = collision.GetComponentInParent<NPC_Behaviour>();
+            //newNPC = collision.GetComponentInParent<NPC_Behaviour>();
+            input = collision.GetComponent<PlayerInput>();
             if (newNPC.isInteractable == true)
             {
                 interactButton.SetActive(true);
@@ -34,9 +44,24 @@ public class TalkToNPC : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Invoke("NewMethod", 0.2f);
+        }
+    }
+
+    private void NewMethod()
+    {
+        interact.onClick.AddListener(TalkWithNPC);
+        dialog.onClick.AddListener(TalkWithNPC);
+        dialog.onClick.AddListener(CloseDialog);
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("NPC")) interactButton.SetActive(false);
+        if (collision.CompareTag("Player")) interactButton.SetActive(false);
     }
 
     public void TalkWithNPC()
@@ -54,6 +79,8 @@ public class TalkToNPC : MonoBehaviour
         {
             input.enabled = true;
             isEndOfDialog = false;
+            interact.onClick.RemoveAllListeners();
+            dialog.onClick.RemoveAllListeners();
             dialogPanel.SetActive(false);
             interactButton.SetActive(false);
         }
