@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Drawing;
+using UnityEngine.SceneManagement;
 
 public class PiontDiCaKheo : MonoBehaviour
 {
 
-    public GameObject cardBV;
-    public GameObject canvaPTC;
-
-    public GameObject conLat;
-
+    public GameObject gameOverPanel;
+    public GameComplete gameComplete;
+    public GameObject player;
+    public GameObject sliderController;
     public TMP_Text textPoint;
     public static int Point;
     public int piontWinGame = 10;
@@ -19,10 +19,7 @@ public class PiontDiCaKheo : MonoBehaviour
     void Start()
     {
         Point = 0;
-        cardBV.SetActive(false);
-        canvaPTC.SetActive(false);
-        conLat.SetActive(true);
-
+       SetActiveOJController(true);
     }
 
     private void FixedUpdate() 
@@ -36,9 +33,16 @@ public class PiontDiCaKheo : MonoBehaviour
     {
         if(Point >= piontWinGame)
         {
-            cardBV.SetActive(true);
-            canvaPTC.SetActive(true);
-            conLat.SetActive(false);
+            gameComplete.isSuccess = true;
+            gameOverPanel.SetActive(true);
+            SetActiveOJController(false);
         }
+    }
+
+    public void SetActiveOJController(bool setActive)
+    {
+        player.SetActive(setActive);
+        sliderController.SetActive(setActive);
+       
     }
 }

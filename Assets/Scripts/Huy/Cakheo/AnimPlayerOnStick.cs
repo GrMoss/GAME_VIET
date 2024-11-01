@@ -7,8 +7,12 @@ using UnityEngine.SceneManagement;
 public class AnimPlayerOnStick : MonoBehaviour
 {
     public Animator[] animator;
+    public GameComplete gameComplete;
+    public GameObject gameOverPanerl;
+      public PiontDiCaKheo piontDiCaKheo;
     public float wait = 0.3f;
     int characterIndex = Player.Instance.gender;
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -70,8 +74,9 @@ public class AnimPlayerOnStick : MonoBehaviour
     {
         StartVibration();
         yield return new WaitForSeconds(wait);
-        Time.timeScale = 0;
-        SceneManager.LoadScene("DiCaKheo");
+        gameComplete.isSuccess = false;
+        gameOverPanerl.SetActive(true);
+        piontDiCaKheo.SetActiveOJController(false);
     }
 
     public void StartVibration()

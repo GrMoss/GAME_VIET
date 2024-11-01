@@ -81,9 +81,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        Debug.Log("Gender: " + Gender);
-        Debug.Log("Player Name: " + PlayerName);
-        Debug.Log("Id: " + Id);
+        // Debug.Log("Gender: " + Gender);
+        // Debug.Log("Player Name: " + PlayerName);
+        // Debug.Log("Id: " + Id);
     }
 
     // Phương thức để sinh ID ngẫu nhiên

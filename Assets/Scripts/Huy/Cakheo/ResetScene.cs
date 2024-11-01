@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class ResetScene : MonoBehaviour
 {
     public Animator animator;
+    public GameComplete gameComplete;
+    public GameObject gameOverPanerl;
+    public PiontDiCaKheo piontDiCaKheo;
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
@@ -21,8 +24,9 @@ public class ResetScene : MonoBehaviour
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.5f);
-        Time.timeScale = 0;
-        SceneManager.LoadScene("DiCaKheo");
+        gameComplete.isSuccess = false;
+        gameOverPanerl.SetActive(true);
+        piontDiCaKheo.SetActiveOJController(false);
     }
 
     public void StartVibration()
