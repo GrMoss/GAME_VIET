@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     private Dictionary<int, bool> CompletedLevels = new Dictionary<int, bool>();
 
+    private bool isDataLoaded = false;
+
     private DateTime SaveTime;
 
     private void Awake()
@@ -34,10 +36,12 @@ public class Player : MonoBehaviour
         }
 
         // Kiểm tra và khởi tạo vị trí nếu chưa được thiết lập
-        if (PositionPlayer == null || PositionPlayer.Length < 3)
-        {
-            PositionPlayer = new float[3] { -6.1f, -0.9f, 0f };
-        }   
+        // if (PositionPlayer == null)
+        // {
+        //     PositionPlayer = new float[3] { -6.1f, -0.9f, 0f };
+        // }  
+        
+        
     }
 
     public int id
@@ -101,11 +105,17 @@ public class Player : MonoBehaviour
         return CompletedLevels.ContainsKey(levelId) && CompletedLevels[levelId];
     }
 
+    private void Start() 
+    {
+        CheckPlayerIdAndUpdateLevels(Id);
+    }
+
     private void FixedUpdate() 
     {
         // Debug.Log("Gender: " + Gender);
         // Debug.Log("Player Name: " + PlayerName);
         // Debug.Log("Id: " + Id);
+        DebugLogPlayerLevels();
     }
 
     // Phương thức để sinh ID ngẫu nhiên
@@ -123,7 +133,7 @@ public class Player : MonoBehaviour
     }
 
     // Tải thông tin người chơi theo ID
-   public void LoadPlayerById(int playerId)
+    public void LoadPlayerById(int playerId)
     {
         PlayerData data = SaveSystem.LoadPlayer(playerId);
         if (data != null)
@@ -134,15 +144,67 @@ public class Player : MonoBehaviour
             IdBV = data.IdBV;
             PositionPlayer = data.PositionPlayer;
             SaveTime = data.SaveTime;
-            CompletedLevels = data.CompletedLevels ?? new Dictionary<int, bool>();
-
-            transform.position = new Vector3(data.PositionPlayer[0], data.PositionPlayer[1], data.PositionPlayer[2]);
             Inventory = data.Inventory;
+
+            // // Kiểm tra và thiết lập CompletedLevels nếu chưa có dữ liệu
+            // if (data.CompletedLevels == null || data.CompletedLevels.Count == 0)
+            // {
+            //     CompletedLevels = new Dictionary<int, bool>();
+            //     for (int levelId = 1; levelId <= 10; levelId++)
+            //     {
+            //         CompletedLevels[levelId] = false; // Đặt tất cả các level từ 1 đến 10 thành false
+            //     }
+            // }
+            // else
+            // {
+            //     CompletedLevels = data.CompletedLevels; // Nếu có dữ liệu, cập nhật từ dữ liệu đã tải
+            // }
+
+            // Cập nhật trạng thái tải dữ liệu thành công
+            isDataLoaded = true;
+            Debug.Log("Data loaded successfully for player ID: " + playerId);
+
+            // Ghi log thông tin các level
+            DebugLogPlayerLevels();
         }
         else
         {
             Debug.LogError("Không thể tải thông tin người chơi với ID: " + playerId);
+            // Đánh dấu rằng dữ liệu chưa được tải thành công
+            isDataLoaded = false;
         }
+    }
+
+    public void CheckPlayerIdAndUpdateLevels(int playerId)
+    {
+        List<PlayerData> allPlayers = SaveSystem.LoadAllPlayers(); // Lấy tất cả người chơi từ hệ thống lưu trữ
+
+        // Kiểm tra xem playerId có trong danh sách người chơi không
+        bool playerExists = allPlayers.Any(player => player.Id == playerId);
+
+        if (!playerExists)
+        {
+            // Nếu không có trong danh sách, đặt tất cả level từ 1 đến 10 thành false
+            CompletedLevels.Clear();
+            for (int levelId = 1; levelId <= 10; levelId++)
+            {
+                CompletedLevels[levelId] = false; // Đặt tất cả các level từ 1 đến 10 thành false
+            }
+            Debug.Log($"Player ID {playerId} not found. All levels set to false.");
+        }
+    }
+
+    // Phương thức mới để ghi log thông tin trạng thái hoàn thành của các level
+    private void DebugLogPlayerLevels()
+    {
+        foreach (var level in CompletedLevels)
+        {
+            Debug.Log($"Level ID: {level.Key}, Completed: {level.Value}");
+        }
+    }
+     public bool IsDataLoaded()
+    {
+        return isDataLoaded;
     }
 
     // Get all players
@@ -155,7 +217,7 @@ public class Player : MonoBehaviour
         }
     }
 
-   public void ResetPlayerData()
+    public void ResetPlayerData()
     {
         // Đặt lại ID và tên người chơi
         Id = 0;
@@ -166,13 +228,15 @@ public class Player : MonoBehaviour
         PositionPlayer = new float[3] { -6.1f, -0.9f, 0f };  // Đặt về vị trí mặc định
 
         Inventory.Clear();
-        
 
+        // Đặt tất cả màn chơi từ 1 đến 10 thành false
         CompletedLevels.Clear();
+        for (int levelId = 1; levelId <= 10; levelId++)
+        {
+            CompletedLevels[levelId] = false;
+        }
 
         SaveTime = DateTime.MinValue;
-
-        transform.position = new Vector3(PositionPlayer[0], PositionPlayer[1], PositionPlayer[2]);
 
         Debug.Log("Player data has been reset.");
     }

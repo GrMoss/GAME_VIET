@@ -4,19 +4,31 @@ using UnityEngine;
 
 public class PlayerInDiCaKheo : MonoBehaviour
 {
-
     [SerializeField] private GameObject[] player;
-    [SerializeField] PiontDiCaKheo piontDiCaKheo;
+    [SerializeField] PointDiCaKheo pointDiCaKheo;
+    
+    private bool hasCheckedWinCondition = false;
 
-    private void Start() {
+    private void Start() 
+    {
         player[Player.Instance.gender].SetActive(true);
+        hasCheckedWinCondition = false; 
     }
 
-        private void FixedUpdate() 
+    private void FixedUpdate() 
     {
-        if(PiontDiCaKheo.Point >= piontDiCaKheo.piontWinGame)
+        if (!hasCheckedWinCondition) 
+        {
+            SetATPlayer();
+        }
+    }
+
+    private void SetATPlayer()
+    {
+        if (PointDiCaKheo.Point >= pointDiCaKheo.pointWinGame)
         {
             player[Player.Instance.gender].SetActive(false);
+            hasCheckedWinCondition = true; 
         }
     }
 }

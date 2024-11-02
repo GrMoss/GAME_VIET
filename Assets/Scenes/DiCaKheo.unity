@@ -5197,7 +5197,7 @@ MonoBehaviour:
   - {fileID: 110754109}
   gameComplete: {fileID: 622387140}
   gameOverPanerl: {fileID: 622387139}
-  piontDiCaKheo: {fileID: 1764828399}
+  pointDiCaKheo: {fileID: 0}
   wait: 0.5
 --- !u!1 &1370463661
 GameObject:
@@ -6404,7 +6404,7 @@ MonoBehaviour:
   player: {fileID: 2000948057}
   sliderController: {fileID: 1341306455}
   textPoint: {fileID: 2076704621}
-  piontWinGame: 2
+  pointWinGame: 3
 --- !u!114 &1764828400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8291,7 +8291,7 @@ MonoBehaviour:
   player:
   - {fileID: 1420678720}
   - {fileID: 110754106}
-  piontDiCaKheo: {fileID: 1764828399}
+  pointDiCaKheo: {fileID: 0}
 --- !u!1 &2010009699
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class AnimPlayerOnStick : MonoBehaviour
     public Animator[] animator;
     public GameComplete gameComplete;
     public GameObject gameOverPanerl;
-      public PiontDiCaKheo piontDiCaKheo;
+      public PointDiCaKheo pointDiCaKheo;
     public float wait = 0.3f;
     int characterIndex = Player.Instance.gender;
 
@@ -76,7 +76,7 @@ public class AnimPlayerOnStick : MonoBehaviour
         yield return new WaitForSeconds(wait);
         gameComplete.isSuccess = false;
         gameOverPanerl.SetActive(true);
-        piontDiCaKheo.SetActiveOJController(false);
+        pointDiCaKheo.SetActiveOJController(false);
     }
 
     public void StartVibration()

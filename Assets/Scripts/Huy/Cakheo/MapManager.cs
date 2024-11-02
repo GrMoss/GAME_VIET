@@ -15,31 +15,31 @@ public class MapManager : MonoBehaviour
     private void FixedUpdate() 
     {
 
-        if(PiontDiCaKheo.Point == 3)
+        if(PointDiCaKheo.Point == 3)
         {
             spawnBox.spawnInterval = 3;
         }
-        else if(PiontDiCaKheo.Point == 5)
+        else if(PointDiCaKheo.Point == 5)
         {
             spawnBox.spawnInterval = 2.5f;
         }
-        else if(PiontDiCaKheo.Point == 10)
+        else if(PointDiCaKheo.Point == 10)
         {
             spawnBox.spawnInterval = 2;
         }
-        else if(PiontDiCaKheo.Point == 20)
+        else if(PointDiCaKheo.Point == 20)
         {
             spawnBox.spawnInterval = 2.5f;
         }
-        else if(PiontDiCaKheo.Point == 30)
+        else if(PointDiCaKheo.Point == 30)
         {
             spawnBox.spawnInterval = 2;
         }
-        else if(PiontDiCaKheo.Point == 40)
+        else if(PointDiCaKheo.Point == 40)
         {
             spawnBox.spawnInterval = 1.5f;
         } 
-        else if(PiontDiCaKheo.Point == 50)
+        else if(PointDiCaKheo.Point == 50)
         {
             spawnBox.spawnInterval = 1;
         }

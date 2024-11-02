@@ -8,7 +8,7 @@ public class ResetScene : MonoBehaviour
     public Animator animator;
     public GameComplete gameComplete;
     public GameObject gameOverPanerl;
-    public PiontDiCaKheo piontDiCaKheo;
+    public PointDiCaKheo piontDiCaKheo;
 
     private void OnCollisionEnter2D(Collision2D other) 
     {

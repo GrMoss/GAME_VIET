@@ -12,7 +12,8 @@ public class PlayerData
     public float[] PositionPlayer;
     public List<Item_Data> Inventory;
     public DateTime SaveTime;
-    public Dictionary<int, bool> CompletedLevels;
+    public Dictionary<int, bool> CompletedLevels; // Sử dụng Dictionary để theo dõi trạng thái màn chơi
+
     public PlayerData(Player player)
     {
         Id = player.id;
@@ -26,7 +27,7 @@ public class PlayerData
             player.transform.position.z
         };
         Inventory = new List<Item_Data>(player.inventory);
-        SaveTime = DateTime.Now;
+        SaveTime = player.saveTime; // Sử dụng SaveTime từ Player
         CompletedLevels = new Dictionary<int, bool>(player.completedLevels);
     }
 }

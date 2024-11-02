@@ -6,9 +6,9 @@ public class BoxCollider : MonoBehaviour
 {
    private void OnTriggerEnter2D(Collider2D other) 
    {
-        if(other.CompareTag("Player"))
-        {
-         PiontDiCaKheo.Point += 1;
-        }   
+      if(other.CompareTag("Player"))
+      {
+         PointDiCaKheo.Point += 1;
+      }   
    }
 }
