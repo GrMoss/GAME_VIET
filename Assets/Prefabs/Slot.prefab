@@ -166,7 +166,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemQuantityText: {fileID: 3740640504977920923}
-  itemImage: {fileID: 7218468053310615686}
+  imageItem: {fileID: 7218468053310615686}
+  imagesItem:
+  - {fileID: 21300000, guid: 2e7f9b79769b740ed95989ef3bbc906e, type: 3}
+  - {fileID: 21300000, guid: 986994c4174fd5243b1ade4315d6f955, type: 3}
+  - {fileID: 21300000, guid: c24de93d6d4d9b34e99bab54d095b83c, type: 3}
+  - {fileID: 21300000, guid: 2e7f9b79769b740ed95989ef3bbc906e, type: 3}
+  - {fileID: 21300000, guid: 5c1c4f58eb5d1e6459d919bc74a3cf61, type: 3}
+  - {fileID: 21300000, guid: 6e622e7b8c05c1846be890cff5f09958, type: 3}
+  - {fileID: 21300000, guid: 983daa62f5cec864a8fc05f11dc3e019, type: 3}
+  - {fileID: 21300000, guid: 58c3958efe985944a94bd929247394a4, type: 3}
 --- !u!1 &7639771356358766348
 GameObject:
   m_ObjectHideFlags: 0

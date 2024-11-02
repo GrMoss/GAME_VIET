@@ -20,6 +20,7 @@ public class PiontDiCaKheo : MonoBehaviour
     {
         Point = 0;
        SetActiveOJController(true);
+       Player.Instance.IsLevelCompleted(1);
     }
 
     private void FixedUpdate() 
@@ -31,11 +32,13 @@ public class PiontDiCaKheo : MonoBehaviour
 
     private void WinMiniGame()
     {
-        if(Point >= piontWinGame)
+        if(Point >= piontWinGame && Player.Instance.IsLevelCompleted(1))
         {
             gameComplete.isSuccess = true;
             gameOverPanel.SetActive(true);
             SetActiveOJController(false);
+             Player.Instance.AddOrUpdateItemById(15,1);
+            Player.Instance.MarkLevelAsCompleted(1);
         }
     }
 

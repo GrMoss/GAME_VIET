@@ -23,7 +23,7 @@ public class Spawn_Player : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        Debug.Log("Vị trí nhân vật: " + playerPrefabs[characterIndex].transform.position);
+        // Debug.Log("Vị trí nhân vật: " + playerPrefabs[characterIndex].transform.position);
     }
 
     public void SelectPlayer()

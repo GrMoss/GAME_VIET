@@ -145,7 +145,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    // lay all player
+    // Get all players
     public void DisplayAllPlayers()
     {
         List<PlayerData> allPlayers = SaveSystem.LoadAllPlayers();
@@ -153,6 +153,28 @@ public class Player : MonoBehaviour
         {
             Debug.Log("ID: " + playerData.Id + ", Name: " + playerData.PlayerName + ", Gender: " + playerData.Gender + "Save Time; " + playerData.SaveTime);
         }
+    }
+
+   public void ResetPlayerData()
+    {
+        // Đặt lại ID và tên người chơi
+        Id = 0;
+        PlayerName = "";
+        Gender = 0;
+
+        IdBV = new int[0];
+        PositionPlayer = new float[3] { -6.1f, -0.9f, 0f };  // Đặt về vị trí mặc định
+
+        Inventory.Clear();
+        
+
+        CompletedLevels.Clear();
+
+        SaveTime = DateTime.MinValue;
+
+        transform.position = new Vector3(PositionPlayer[0], PositionPlayer[1], PositionPlayer[2]);
+
+        Debug.Log("Player data has been reset.");
     }
 
     // Lấy toàn bộ dữ liệu trong Inventory

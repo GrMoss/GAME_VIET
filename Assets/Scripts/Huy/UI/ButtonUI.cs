@@ -14,28 +14,29 @@ public class ButtonUI : MonoBehaviour
 
      public void Exit()
      {
-         Application.Quit();
+        Application.Quit();
      }
 
      public void ExitToMenu()
      {
-         SceneManager.LoadScene("Login");
+        SceneManager.LoadScene("Login");
+        Player.Instance.ResetPlayerData();
      }
      
      public void ExitToHome()
      {
-         SceneManager.LoadScene("Home");
-         Time.timeScale = 1;
+        SceneManager.LoadScene("Home");
+        Time.timeScale = 1;
      }
  
      public void MiniGameDiCaKheo()
      {
-         SceneManager.LoadScene("DiCaKheo");
+        SceneManager.LoadScene("DiCaKheo");
      }
 
      public void MiniGameTimLeVat()
      {
-         SceneManager.LoadScene("TimLeVat");
+        SceneManager.LoadScene("TimLeVat");
          
      }
      

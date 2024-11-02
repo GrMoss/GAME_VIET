@@ -17,7 +17,6 @@ public class ResetScene : MonoBehaviour
             animator.SetBool("T",true);
             StartVibration();
             StartCoroutine(Wait());
-
         }
     }
 

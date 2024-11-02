@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 public class SaveSystem : MonoBehaviour
 {
@@ -70,7 +71,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    // Tải thông tin của tất cả người chơi
+  
     public static List<PlayerData> LoadAllPlayers()
     {
         List<PlayerData> allPlayerData = new List<PlayerData>();
@@ -78,11 +79,23 @@ public class SaveSystem : MonoBehaviour
 
         foreach (string file in files)
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream fileStream = new FileStream(file, FileMode.Open))
+            try
             {
-                PlayerData data = formatter.Deserialize(fileStream) as PlayerData;
-                allPlayerData.Add(data);
+                BinaryFormatter formatter = new BinaryFormatter();
+                using (FileStream fileStream = new FileStream(file, FileMode.Open))
+                {
+                    PlayerData data = formatter.Deserialize(fileStream) as PlayerData;
+                    allPlayerData.Add(data);
+                }
+            }
+            catch (SerializationException e)
+            {
+                Debug.LogError("Không thể giải tuần tự tệp: " + file + " với lỗi: " + e.Message);
+                File.Delete(file); // Xóa tệp lỗi
+            }
+            catch (IOException e)
+            {
+                Debug.LogError("Lỗi I/O khi đọc tệp: " + file + " với lỗi: " + e.Message);
             }
         }
 
