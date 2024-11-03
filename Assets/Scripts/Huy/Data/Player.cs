@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
 
     private void Start() 
     {
-        CheckPlayerIdAndUpdateLevels(Id);
+        // CheckPlayerIdAndUpdateLevels(Id);
     }
 
     private void FixedUpdate() 
@@ -146,19 +146,19 @@ public class Player : MonoBehaviour
             SaveTime = data.SaveTime;
             Inventory = data.Inventory;
 
-            // // Kiểm tra và thiết lập CompletedLevels nếu chưa có dữ liệu
-            // if (data.CompletedLevels == null || data.CompletedLevels.Count == 0)
-            // {
-            //     CompletedLevels = new Dictionary<int, bool>();
-            //     for (int levelId = 1; levelId <= 10; levelId++)
-            //     {
-            //         CompletedLevels[levelId] = false; // Đặt tất cả các level từ 1 đến 10 thành false
-            //     }
-            // }
-            // else
-            // {
-            //     CompletedLevels = data.CompletedLevels; // Nếu có dữ liệu, cập nhật từ dữ liệu đã tải
-            // }
+            // Kiểm tra và thiết lập CompletedLevels nếu chưa có dữ liệu
+            if (data.CompletedLevels == null || data.CompletedLevels.Count == 0)
+            {
+                CompletedLevels = new Dictionary<int, bool>();
+                for (int levelId = 1; levelId <= 10; levelId++)
+                {
+                    CompletedLevels[levelId] = false; // Đặt tất cả các level từ 1 đến 10 thành false
+                }
+            }
+            else
+            {
+                CompletedLevels = data.CompletedLevels; // Nếu có dữ liệu, cập nhật từ dữ liệu đã tải
+            }
 
             // Cập nhật trạng thái tải dữ liệu thành công
             isDataLoaded = true;
@@ -236,7 +236,7 @@ public class Player : MonoBehaviour
             CompletedLevels[levelId] = false;
         }
 
-        SaveTime = DateTime.MinValue;
+        // SaveTime = DateTime.MinValue;
 
         Debug.Log("Player data has been reset.");
     }
