@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         // Debug.Log("Gender: " + Gender);
         // Debug.Log("Player Name: " + PlayerName);
         // Debug.Log("Id: " + Id);
-        DebugLogPlayerLevels();
+        // DebugLogPlayerLevels();
     }
 
     // Phương thức để sinh ID ngẫu nhiên
