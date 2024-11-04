@@ -12,7 +12,4 @@ public class TestInventory : MonoBehaviour
         Player.Instance.AddOrUpdateItemById(5,1);
         inventoryUI.UpdateInventory();
     }
-
-   
-    
 }
