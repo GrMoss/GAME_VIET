@@ -9,6 +9,7 @@ public class BoxCollider : MonoBehaviour
       if(other.CompareTag("Player"))
       {
          PointDiCaKheo.Point += 1;
+         FindObjectOfType<AudioManager>().Play("Point");
       }   
    }
 }

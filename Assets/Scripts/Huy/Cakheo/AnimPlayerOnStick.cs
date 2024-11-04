@@ -72,6 +72,7 @@ public class AnimPlayerOnStick : MonoBehaviour
 
     IEnumerator Wait()
     {
+        FindObjectOfType<AudioManager>().Play("Vacham");
         StartVibration();
         yield return new WaitForSeconds(wait);
         gameComplete2.isSuccess = false;

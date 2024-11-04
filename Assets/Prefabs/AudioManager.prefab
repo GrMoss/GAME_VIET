@@ -53,19 +53,37 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Select
     clip: {fileID: 8300000, guid: eafc8cfe2c2a54453bd02eb058626cd7, type: 3}
-    volume: 1
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Yes
     clip: {fileID: 8300000, guid: 69cfeae8c0d6c47d78f51d41ffda3870, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: No
     clip: {fileID: 8300000, guid: 9abcfb2a21d4b4359891e34d3a1b69bd, type: 3}
-    volume: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Point
+    clip: {fileID: 8300000, guid: 4b122014f1b5b40fbafaf85511f9fcbe, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Lose
+    clip: {fileID: 8300000, guid: 7b95fe76d9e6b4783bc0bf068490cc9e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: dc7e9d5a7c06f46aaa49e1d6c6c5acc4, type: 3}
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}

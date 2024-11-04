@@ -14,6 +14,7 @@ public class ResetScene : MonoBehaviour
     {
         if(other.collider.CompareTag("Box"))
         {
+            FindObjectOfType<AudioManager>().Play("Vacham");
             animator.SetBool("T",true);
             StartVibration();
             StartCoroutine(Wait());
