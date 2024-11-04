@@ -381,6 +381,7 @@ public class Player : MonoBehaviour
         {
             CompletedLevels = Enumerable.Range(1, 10).ToDictionary(x => x, x => false);
             Debug.Log($"Player ID {playerId} not found. All levels set to false.");
+            ResetPlayerData();
         }
     }
 
