@@ -40,7 +40,7 @@ public class LoadGame : MonoBehaviour
                 // Cập nhật giao diện người dùng
                 slotData.textId.text = "ID: " + slotData.Id;
                 slotData.textPlayerName.text = "Tên: " + slotData.PlayerName;
-                slotData.textSaveTime.text = slotData.SaveTime.ToString("g"); // Định dạng thời gian
+                // slotData.textSaveTime.text = slotData.SaveTime.ToString("g"); // Định dạng thời gian
             }
             else if (i < slotLoadData.Length)
             {

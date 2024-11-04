@@ -52,30 +52,41 @@ public class TalkToNPC : MonoBehaviour
         }
     }
 
-    private void NewMethod()
+ private void NewMethod()
+{
+    if (interact != null)
     {
         interact.onClick.AddListener(TalkWithNPC);
+    }
+    if (dialog != null)
+    {
         dialog.onClick.AddListener(TalkWithNPC);
         dialog.onClick.AddListener(CloseDialog);
     }
+}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) interactButton.SetActive(false);
+        if (collision.CompareTag("Player") && interactButton != null)
+        {
+            interactButton.SetActive(false);
+        }
     }
-
     public void TalkWithNPC()
     {
-        if (newNPC.isInteractable == true)
+        if (newNPC != null && newNPC.isInteractable)
         {
             newNPC.Interact();
-            input.enabled = false;
+            if (input != null)
+            {
+                input.enabled = false;
+            }
         }
     }
     
     public void CloseDialog()
     {
-        if (isEndOfDialog == true) 
+        if (isEndOfDialog) 
         {
             input.enabled = true;
             isEndOfDialog = false;
