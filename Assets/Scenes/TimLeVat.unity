@@ -4642,7 +4642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8a48efa34ffba41910016ae2cb957c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 180
+  time: 999
   timer: 0
   display: {fileID: 1484985653}
   isGameRunning: 0
@@ -7247,10 +7247,10 @@ MonoBehaviour:
   itemData:
   - itemSprite: {fileID: 21300000, guid: c24de93d6d4d9b34e99bab54d095b83c, type: 3}
     itemName: "B\xE1nh ch\u01B0ng"
-    wantedAmount: 2
+    wantedAmount: 1
   - itemSprite: {fileID: 21300000, guid: 986994c4174fd5243b1ade4315d6f955, type: 3}
     itemName: "B\xE1nh d\xE0y"
-    wantedAmount: 3
+    wantedAmount: 1
   - itemSprite: {fileID: 21300000, guid: 58c3958efe985944a94bd929247394a4, type: 3}
     itemName: "Ng\u0169 qu\u1EA3"
     wantedAmount: 1
@@ -7259,7 +7259,7 @@ MonoBehaviour:
     wantedAmount: 1
   - itemSprite: {fileID: 21300000, guid: 5c1c4f58eb5d1e6459d919bc74a3cf61, type: 3}
     itemName: "N\u01B0\u1EDBc c\xFAng"
-    wantedAmount: 2
+    wantedAmount: 1
   - itemSprite: {fileID: 21300000, guid: 983daa62f5cec864a8fc05f11dc3e019, type: 3}
     itemName: "R\u01B0\u1EE3u"
     wantedAmount: 1

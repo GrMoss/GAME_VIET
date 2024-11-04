@@ -20,6 +20,7 @@ public class CardData : MonoBehaviour
     public GameComplete gameComplete;
     public GameObject resultPanel;
     public List<GameObject> cards;
+
     private void Start()
     {
         UpdateItemCount();

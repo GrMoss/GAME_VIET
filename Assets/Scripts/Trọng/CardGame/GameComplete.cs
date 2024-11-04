@@ -11,6 +11,15 @@ public class GameComplete : MonoBehaviour
     public GameObject replayButton;
     public GameObject prizeButton;
     public TextMeshProUGUI resultText;
+    CardData cardData;
+    List<ItemData> itemData = new List<ItemData>();
+    Player player;
+    private void Awake()
+    {
+        player = FindAnyObjectByType<Player>();
+        cardData = FindObjectOfType<CardData>();
+        itemData = cardData.itemData;
+    }
 
     private void OnEnable()
     {
@@ -18,6 +27,17 @@ public class GameComplete : MonoBehaviour
         {
             prizeButton.SetActive(true);
             resultText.text = "HOÀN THÀNH";
+            if (!player.IsLevelCompleted(69))
+            {
+                player.MarkLevelAsCompleted(69);
+                player.AddOrUpdateItemById(13, 1);
+            }
+            else ClosePrize();
+            for (int i = 0; i < 6; i++)
+            {
+                player.AddOrUpdateItemById(i, itemData[i].wantedAmount);
+                Debug.Log(itemData[i].wantedAmount);
+            }
         }
         else
         {
