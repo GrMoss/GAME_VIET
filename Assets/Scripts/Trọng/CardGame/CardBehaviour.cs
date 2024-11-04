@@ -61,9 +61,9 @@ public class CardBehaviour : MonoBehaviour
         if (isCorrect)
         {
             ani.SetTrigger("Correct");
+            audioManager.Play("Yes");
             yield return new WaitForSeconds(1f);
             ChoseAnItem();
-            audioManager.Play("Yes");
         }
         else
         {
