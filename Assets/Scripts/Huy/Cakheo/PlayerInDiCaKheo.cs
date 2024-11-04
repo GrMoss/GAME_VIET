@@ -9,40 +9,26 @@ public class PlayerInDiCaKheo : MonoBehaviour
     
     private bool hasCheckedWinCondition = false;
 
-private void Start() 
-{
-    if (Player.Instance != null && player[Player.Instance.gender] != null)
+    private void Start() 
     {
         player[Player.Instance.gender].SetActive(true);
+        hasCheckedWinCondition = false; 
     }
-    else
-    {
-        Debug.LogError("Player instance or player gender is null.");
-    }
-    hasCheckedWinCondition = false; 
-}
 
-private void FixedUpdate() 
-{
-    if (!hasCheckedWinCondition) 
+    private void FixedUpdate() 
     {
-        SetATPlayer();
+        if (!hasCheckedWinCondition) 
+        {
+            SetATPlayer();
+        }
     }
-}
 
-private void SetATPlayer()
-{
-    if (PointDiCaKheo.Point >= pointDiCaKheo.pointWinGame)
+    private void SetATPlayer()
     {
-        if (Player.Instance != null && player[Player.Instance.gender] != null)
+        if (PointDiCaKheo.Point >= pointDiCaKheo.pointWinGame)
         {
             player[Player.Instance.gender].SetActive(false);
             hasCheckedWinCondition = true; 
         }
-        else
-        {
-            Debug.LogError("Player instance or player gender is null.");
-        }
     }
-}
 }
