@@ -1163,6 +1163,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 825811390}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &245965026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2204,6 +2216,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 825811390}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &483151413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3185,6 +3209,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 825811390}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &781906889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3321,6 +3357,82 @@ Transform:
   - {fileID: 1823317358}
   m_Father: {fileID: 433190669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &825811389
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 61335185875890006, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 06fac1a093a534ff3b8f6c03c0da738d, type: 3}
+    - target: {fileID: 1218360902486321472, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_Name
+      value: SettingAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2809746
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5761529
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.027241638
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963257400190658835, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: soundTheme
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+--- !u!114 &825811390 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7963257400190658835, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+  m_PrefabInstance: {fileID: 825811389}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29877a20fb294bec9a1252bccfe8712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827623451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,6 +4171,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 825811390}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1068478709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4303,6 +4427,18 @@ MonoBehaviour:
       - m_Target: {fileID: 424556971}
         m_TargetAssemblyTypeName: TriggerAnimation, Assembly-CSharp
         m_MethodName: CloseCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 825811390}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6538,6 +6674,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1764828394}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
         m_MethodName: ExitToHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 825811390}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8876,6 +9024,7 @@ SceneRoots:
   - {fileID: 1764828398}
   - {fileID: 1905130041}
   - {fileID: 2000948058}
+  - {fileID: 825811389}
   - {fileID: 492795345}
   - {fileID: 622387145}
   - {fileID: 424556976}
