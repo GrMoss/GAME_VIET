@@ -20,6 +20,7 @@ public class CardData : MonoBehaviour
     public GameComplete gameComplete;
     public GameObject resultPanel;
     public List<GameObject> cards;
+    ShowText showText => GetComponent<ShowText>();
 
     private void Start()
     {
@@ -48,7 +49,8 @@ public class CardData : MonoBehaviour
             if (itemCount[i] > itemData[i].wantedAmount)
             {
                 itemCount[i] = itemData[i].wantedAmount;
-                clock.timer += 3;
+                clock.timer += 5;
+                showText.GetTextPopUp(Color.white, 6, "+5");
             }
             itemCountText[i].text = ": " + itemCount[i] + " / " + itemData[i].wantedAmount;
         }
@@ -64,6 +66,7 @@ public class CardData : MonoBehaviour
             if (firstPick == secondPick)
             {
                 itemCount[itemIndex]++;
+                if (itemCount[itemIndex] <= itemData[itemIndex].wantedAmount) showText.GetTextPopUp(Color.green, itemIndex, "+1");
                 correctPick = true;
                 UpdateItemCount();
                 CheckComplete();
