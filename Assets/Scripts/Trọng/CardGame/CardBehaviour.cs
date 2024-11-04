@@ -16,6 +16,7 @@ public class CardBehaviour : MonoBehaviour
     private Button pickButton;
     private int itemIndex;
     Animator ani;
+    AudioManager audioManager;
     private bool clickable = true;
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class CardBehaviour : MonoBehaviour
         cardImage = GetComponent<Image>();
         pickButton = GetComponent<Button>();
         ani = GetComponent<Animator>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     private void Start()
     {
@@ -61,8 +63,13 @@ public class CardBehaviour : MonoBehaviour
             ani.SetTrigger("Correct");
             yield return new WaitForSeconds(1f);
             ChoseAnItem();
+            audioManager.Play("Yes");
         }
-        else ani.SetTrigger("Wrong");
+        else
+        {
+            ani.SetTrigger("Wrong");
+            audioManager.Play("No");
+        }
     }
     public void FlipCardDown()
     {
