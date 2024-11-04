@@ -9,7 +9,7 @@ public class PointDiCaKheo : MonoBehaviour
 {
 
     public GameObject gameOverPanel;
-    public GameComplete gameComplete;
+    public GameComplete2 gameComplete2;
     public GameObject player;
     public GameObject sliderController;
     public TMP_Text textPoint;
@@ -34,7 +34,7 @@ public class PointDiCaKheo : MonoBehaviour
     {
         if(Point >= pointWinGame)
         {
-            gameComplete.isSuccess = true;
+            gameComplete2.isSuccess = true;
             gameOverPanel.SetActive(true);
             SetActiveOJController(false);
             Player.Instance.AddOrUpdateItemById(15,1);

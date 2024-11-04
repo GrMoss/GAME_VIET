@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class AnimPlayerOnStick : MonoBehaviour
 {
     public Animator[] animator;
-    public GameComplete gameComplete;
+    public GameComplete2 gameComplete2;
     public GameObject gameOverPanerl;
       public PointDiCaKheo pointDiCaKheo;
     public float wait = 0.3f;
@@ -74,7 +74,7 @@ public class AnimPlayerOnStick : MonoBehaviour
     {
         StartVibration();
         yield return new WaitForSeconds(wait);
-        gameComplete.isSuccess = false;
+        gameComplete2.isSuccess = false;
         gameOverPanerl.SetActive(true);
         pointDiCaKheo.SetActiveOJController(false);
     }
