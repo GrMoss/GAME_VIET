@@ -7,7 +7,12 @@ public class SettingSound : MonoBehaviour
 {   
     [SerializeField] private string soundTheme;
     [SerializeField] private string soundButton;
+    [SerializeField] private string soundSelect;
 
+    public void SelectSound()
+    {
+        FindObjectOfType<AudioManager>().Play(soundSelect);
+    }
     public void ButtonSound()
     {
         FindObjectOfType<AudioManager>().Play(soundButton);

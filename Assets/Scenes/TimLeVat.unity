@@ -257,6 +257,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4797408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,6 +548,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84499075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,6 +739,82 @@ Transform:
   m_Children: []
   m_Father: {fileID: 928485155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &169567295
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 61335185875890006, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 06fac1a093a534ff3b8f6c03c0da738d, type: 3}
+    - target: {fileID: 1218360902486321472, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_Name
+      value: SettingAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.2809744
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5761529
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02724164
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210487734326923564, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963257400190658835, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+      propertyPath: soundSelect
+      value: Select
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+--- !u!114 &169567296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7963257400190658835, guid: 5aee27176647947fe8d6827e84018f2d, type: 3}
+  m_PrefabInstance: {fileID: 169567295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29877a20fb294bec9a1252bccfe8712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &169605873
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +1055,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1931284688}
         m_TargetAssemblyTypeName: TriggerAnimation, Assembly-CSharp
         m_MethodName: CloseCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2130,6 +2242,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &483495056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +2864,18 @@ MonoBehaviour:
       - m_Target: {fileID: 542219738}
         m_TargetAssemblyTypeName: CardBehaviour, Assembly-CSharp
         m_MethodName: TriggerFlipAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3663,6 +3799,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &691337439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4059,6 +4207,18 @@ MonoBehaviour:
       - m_Target: {fileID: 755895009}
         m_TargetAssemblyTypeName: CardBehaviour, Assembly-CSharp
         m_MethodName: TriggerFlipAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4685,6 +4845,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &936245576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4811,6 +4983,18 @@ MonoBehaviour:
       - m_Target: {fileID: 966457396}
         m_TargetAssemblyTypeName: CardBehaviour, Assembly-CSharp
         m_MethodName: TriggerFlipAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5578,6 +5762,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1170086260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6188,6 +6384,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1292644421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6312,6 +6520,18 @@ MonoBehaviour:
       - m_Target: {fileID: 561332369}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
         m_MethodName: ExitToHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9792,6 +10012,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1948305765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9947,6 +10179,18 @@ MonoBehaviour:
       - m_Target: {fileID: 561332369}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
         m_MethodName: MiniGameTimLeVat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10379,6 +10623,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: SelectSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2113789186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10534,6 +10790,18 @@ MonoBehaviour:
       - m_Target: {fileID: 561332369}
         m_TargetAssemblyTypeName: ButtonUI, Assembly-CSharp
         m_MethodName: ExitToHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 169567296}
+        m_TargetAssemblyTypeName: SettingSound, Assembly-CSharp
+        m_MethodName: ButtonSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10744,6 +11012,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 2122282551}
   - {fileID: 1377867971}
+  - {fileID: 169567295}
   - {fileID: 1370935522}
   - {fileID: 561332373}
   - {fileID: 1521567356}
