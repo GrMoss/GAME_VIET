@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ResetScene : MonoBehaviour
 {
     public Animator animator;
-    public GameComplete gameComplete;
+    public GameComplete2 gameComplete2;
     public GameObject gameOverPanerl;
     public PointDiCaKheo piontDiCaKheo;
 
@@ -14,6 +14,7 @@ public class ResetScene : MonoBehaviour
     {
         if(other.collider.CompareTag("Box"))
         {
+            FindObjectOfType<AudioManager>().Play("Vacham");
             animator.SetBool("T",true);
             StartVibration();
             StartCoroutine(Wait());
@@ -23,7 +24,7 @@ public class ResetScene : MonoBehaviour
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(0.5f);
-        gameComplete.isSuccess = false;
+        gameComplete2.isSuccess = false;
         gameOverPanerl.SetActive(true);
         piontDiCaKheo.SetActiveOJController(false);
     }

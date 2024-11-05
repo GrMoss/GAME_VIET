@@ -8,7 +8,6 @@ public class Save : MonoBehaviour
 {
     public void ButtonSave()
     {
-        Debug.Log("IsWork1");
         Player.Instance.SavePlayer(); 
         Player.Instance.positionPlayer[0] = transform.position.x;
         Player.Instance.positionPlayer[1] = transform.position.y;
@@ -17,8 +16,8 @@ public class Save : MonoBehaviour
 
      public void ButtonLoad()
     {
-        Debug.Log("IsWork2");
         Player.Instance.DisplayAllPlayers();
         Debug.Log(Application.persistentDataPath);
     }
+
 }
