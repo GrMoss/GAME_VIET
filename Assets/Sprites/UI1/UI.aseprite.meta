@@ -152,7 +152,6 @@ ScriptedImporter:
     cells:
     - name: UI
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 362

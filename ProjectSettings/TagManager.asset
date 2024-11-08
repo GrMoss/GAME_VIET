@@ -15,6 +15,7 @@ TagManager:
   - NPC
   - Dialog
   - Interact
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - UI
   - ColliderTilemap
   - Player
-  - 
+  - Ground
   - 
   - 
   - 
