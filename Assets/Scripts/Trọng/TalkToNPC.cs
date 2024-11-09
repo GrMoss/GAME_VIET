@@ -8,7 +8,7 @@ public class TalkToNPC : MonoBehaviour
 {
     private GameObject interactButton;
     private NPC_Behaviour newNPC;
-    private GameObject dialogPanel;
+    [SerializeField] private GameObject dialogPanel;
     public static bool isEndOfDialog;
     Button interact;
     Button dialog;
@@ -17,15 +17,15 @@ public class TalkToNPC : MonoBehaviour
     {
         //input = GetComponent<PlayerInput>();
         interactButton = GameObject.Find("InteractButton");
-        dialogPanel = GameObject.Find("Dialog Panel");
+        //dialogPanel = GameObject.Find("Dialog Panel");
         newNPC = GetComponent<NPC_Behaviour>();
         interact = GameObject.FindWithTag("Interact").GetComponent<Button>();
-        dialog = GameObject.FindWithTag("Dialog").GetComponent<Button>();
+        if (dialogPanel != null) dialog = dialogPanel.GetComponentInChildren<Button>();
     }
     private void Start()
     {
         interactButton.SetActive(false);
-        dialogPanel.SetActive(false);
+        //dialogPanel.SetActive(false);
     }
     private void OnTriggerStay2D(Collider2D collision)
     { 
