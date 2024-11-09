@@ -157,8 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   moveDistance: 10
-  flySpeed: 2
-  flyTime: 1
+  flySpeed: 0.005
+  flyTime: 0.75
   posTarget: 5
 --- !u!212 &60044195
 SpriteRenderer:
@@ -434,8 +434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0252af5e08708745841bb8ba13c2818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potIndex: 1
-  gameManager: {fileID: 1407243872}
+  nieuIndex: 1
+  gamePlayDapNieu: {fileID: 1407243872}
   hasItem: 0
 --- !u!212 &121114997
 SpriteRenderer:
@@ -789,8 +789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0252af5e08708745841bb8ba13c2818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potIndex: 2
-  gameManager: {fileID: 1407243872}
+  nieuIndex: 2
+  gamePlayDapNieu: {fileID: 1407243872}
   hasItem: 0
 --- !u!212 &414923763
 SpriteRenderer:
@@ -1003,8 +1003,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0252af5e08708745841bb8ba13c2818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potIndex: 3
-  gameManager: {fileID: 1407243872}
+  nieuIndex: 3
+  gamePlayDapNieu: {fileID: 1407243872}
   hasItem: 0
 --- !u!212 &1304186425
 SpriteRenderer:
@@ -1302,7 +1302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 11.9, y: 12.3}
+  m_AnchoredPosition: {x: 11.900024, y: 12.299988}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1767859419
@@ -1430,8 +1430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0252af5e08708745841bb8ba13c2818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potIndex: 0
-  gameManager: {fileID: 1407243872}
+  nieuIndex: 0
+  gamePlayDapNieu: {fileID: 1407243872}
   hasItem: 0
 --- !u!212 &2083070823
 SpriteRenderer:

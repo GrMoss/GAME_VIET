@@ -94,6 +94,7 @@ public class JumpOnButton : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float fastFallSpeed = -20f;
     [SerializeField] private bool isJump;
+    [SerializeField] private bool isDeah = false;
     [SerializeField] private InputActionReference jumpAction;
     // [SerializeField] private InputActionReference downAction; 
 
@@ -124,9 +125,13 @@ public class JumpOnButton : MonoBehaviour
         // if (downAction != null && downAction.action != null)
         //     downAction.action.Disable();
     }
-
+    private void Update()
+    {
+        CheckAnimation();
+    }
     private void OnJump(InputAction.CallbackContext context)
     {
+        if(isDeah) return;
         if (!isJump)
         {
             myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x, jumpForce);
@@ -150,6 +155,11 @@ public class JumpOnButton : MonoBehaviour
             isJump = false;
             myCollider.enabled = true;
         }
+        if (collision.gameObject.CompareTag("Box"))
+        {
+            isDeah = true;
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -158,5 +168,44 @@ public class JumpOnButton : MonoBehaviour
         {
             myCollider.enabled = true;
         }
+        if (collision.CompareTag("BoxTrigger"))
+        {
+            NhayBaoBoPoint.Point += 1;
+        }
+    }
+    private void CheckAnimation()
+    {
+        if (isDeah)
+        {
+            animator.SetBool("isJump", false);
+            animator.SetBool("isFall", false);
+            animator.SetBool("isRun", false);
+            animator.SetBool("isDeah", true);
+            return;
+        }
+
+        if (isJump && myRigidbody2D.velocity.y > 0)
+        {
+            animator.SetBool("isJump", true);
+            animator.SetBool("isFall", false);
+        }
+        else if (isJump && myRigidbody2D.velocity.y <= 0)
+        {
+            animator.SetBool("isJump", false);
+            animator.SetBool("isFall", true);
+        }
+        else if (!isJump)
+        {
+            animator.SetBool("isJump", false);
+            animator.SetBool("isFall", false);
+            animator.SetBool("isRun", true);
+        }
+    }
+
+    public void Die()
+    {
+        isDeah = true;
+        myRigidbody2D.velocity = Vector2.zero;
+        animator.SetBool("isDeah", true);
     }
 }
