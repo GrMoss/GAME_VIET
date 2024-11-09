@@ -26,11 +26,11 @@ public class CharacterManager : MonoBehaviour
         if (charater != null && charater.animatorController != null)
         {
             animator.runtimeAnimatorController = charater.animatorController;
-            Debug.Log("AnimatorController changed for character ID: " + gender);
+            // Debug.Log("AnimatorController changed for character ID: " + gender);
         }
         else
         {
-            Debug.LogWarning("Character or AnimatorController not found for ID: " + gender);
+            // Debug.LogWarning("Character or AnimatorController not found for ID: " + gender);
         }
     }
 }
