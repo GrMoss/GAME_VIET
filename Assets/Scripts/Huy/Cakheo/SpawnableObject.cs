@@ -33,7 +33,6 @@ public class SpawnableObject : MonoBehaviour
         {
             gameObject.SetActive(false);
 
-
         }
     }
 }

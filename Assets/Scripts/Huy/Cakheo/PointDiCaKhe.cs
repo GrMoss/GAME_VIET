@@ -21,30 +21,7 @@ public class PointDiCaKheo : MonoBehaviour
     {
         Point = 0;
         SetActiveOJController(true);
-        Player.Instance.IsLevelCompleted(1);
-        // CheckLevelStatus(1);
     }
-
-    // void CheckLevelStatus(int levelId)
-    // {
-    //     if (Player.Instance != null)
-    //     {
-    //         bool isCompleted = Player.Instance.IsLevelCompleted(levelId);
-
-    //         if (isCompleted)
-    //         {
-    //             Debug.Log($"Level {levelId} đã hoàn tất.");
-    //         }
-    //         else
-    //         {
-    //             Debug.Log($"Level {levelId} chưa hoàn tất.");
-    //         }
-    //     }
-    //     else
-    //     {
-    //         Debug.LogError("Player instance chưa được khởi tạo.");
-    //     }
-    // }
 
     private void FixedUpdate() 
     {
@@ -56,10 +33,14 @@ public class PointDiCaKheo : MonoBehaviour
     {
         if (!hasWon && Point >= pointWinGame)
         {
+            Player.Instance.IsLevelCompleted(1);
+            if(!Player.Instance.IsLevelCompleted(1))
+            {
+                Player.Instance.AddOrUpdateItemById(15, 1);
+            }
             gameComplete2.isSuccess = true;
             gameOverPanel.SetActive(true);
             SetActiveOJController(false);
-            Player.Instance.AddOrUpdateItemById(15,1);
             Player.Instance.MarkLevelAsCompleted(1);
             hasWon = true;
         }

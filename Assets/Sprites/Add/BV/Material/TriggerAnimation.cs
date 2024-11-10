@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerAnimation : MonoBehaviour
 {
     public Animator animator;
-    public GameComplete gameComplete;
+    public GameComplete2 gameComplete2;
     
     public void TriggerFlipCard()
     {
@@ -23,6 +23,6 @@ public class TriggerAnimation : MonoBehaviour
     
     public void ClosePrize()
     {
-        gameComplete.ClosePrize();
+        gameComplete2.ClosePrize();
     }
 }

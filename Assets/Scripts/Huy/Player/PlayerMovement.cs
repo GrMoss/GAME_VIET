@@ -39,15 +39,8 @@ public class PlayerMovememt : MonoBehaviour
     private void FixedUpdate()
     {
         myRigidbody2D.velocity = moveDirection * speed;
-        SendPositionPlayer();
     }
 
-    private void SendPositionPlayer()
-    {
-        Player.Instance.positionPlayer[0] = transform.position.x;
-        Player.Instance.positionPlayer[1] = transform.position.y;
-        Player.Instance.positionPlayer[2] = transform.position.z;
-    }
     
     private void Move()
     {

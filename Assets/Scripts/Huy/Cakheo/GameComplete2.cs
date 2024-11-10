@@ -21,8 +21,16 @@ public class GameComplete2 : MonoBehaviour
             {
                 prizeButton.SetActive(true);
                 resultText.text = "HOÀN THÀNH";
-                Player.Instance.MarkLevelAsCompleted(1);
-                Player.Instance.AddOrUpdateItemById(15, 1); 
+            }
+            else
+            {
+                ClosePrize();
+            }
+            
+            if (!Player.Instance.IsLevelCompleted(3))
+            {
+                prizeButton.SetActive(true);
+                resultText.text = "HOÀN THÀNH";
             }
             else
             {
