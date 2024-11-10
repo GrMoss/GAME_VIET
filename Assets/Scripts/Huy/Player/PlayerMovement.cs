@@ -14,18 +14,6 @@ public class PlayerMovememt : MonoBehaviour
     private Animator animator;
 
     private Vector2 lastMoveDirection;
-    
-    private Vector3 positionPlayer = new Vector3(
-        Player.Instance.positionPlayer[0],
-        Player.Instance.positionPlayer[1],
-        Player.Instance.positionPlayer[2]);
-        
-    // private SpriteRenderer spriteRenderer;
-
-    private void Start() 
-    {   
-        transform.position = positionPlayer;
-    }
 
     private void Awake()
     {
