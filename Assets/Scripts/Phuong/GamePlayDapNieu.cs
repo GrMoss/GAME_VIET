@@ -9,10 +9,11 @@ public class GamePlayDapNieu : MonoBehaviour
     public Image targetPotImage;
     public Sprite[] potSprites; 
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI timeText;
     public float gameTime = 60f;
     private int score = 0;
     private int currentTargetPotIndex;
-
+    [SerializeField] private bool isTimed;
     private void Start()
     {
         SelectNewTargetPot(); 
@@ -21,7 +22,7 @@ public class GamePlayDapNieu : MonoBehaviour
 
     public void SelectNewTargetPot()
     {
- 
+        if (DapNieuPoint.hasWon == true) return;
         foreach (var pot in pots)
         {
             pot.hasItem = false;
@@ -47,16 +48,24 @@ public class GamePlayDapNieu : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
-        scoreText.text = "Điểm: " + score.ToString();
+        DapNieuPoint.Point = score;
+        scoreText.text = score.ToString();
     }
 
     private IEnumerator Countdown()
     {
         while (gameTime > 0)
         {
+            if (DapNieuPoint.hasWon == true) yield break;
             yield return new WaitForSeconds(1f);
             gameTime--;
-
+            int minutes = Mathf.FloorToInt(gameTime / 60);
+            int seconds = Mathf.FloorToInt(gameTime % 60);
+            timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            if(gameTime <= 10)
+                timeText.color = Color.red;
+            if (gameTime <= 0)
+                isTimed = true;
         }
     }
 }

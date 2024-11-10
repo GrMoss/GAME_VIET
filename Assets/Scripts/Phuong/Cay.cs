@@ -19,6 +19,7 @@ public class Cay : MonoBehaviour
 
     void Update()
     {
+        if (DapNieuPoint.hasWon == true) return;
         if (!isFlying)
         {
             float x = Mathf.PingPong(Time.time * moveSpeed, moveDistance) - moveDistance / 2;
@@ -28,6 +29,7 @@ public class Cay : MonoBehaviour
 
     public void OnButtonPress()
     {
+        if (DapNieuPoint.hasWon == true) return;
         if (!isFlying)
             StartCoroutine(FlyAndReturn());
     }
@@ -36,11 +38,14 @@ public class Cay : MonoBehaviour
     {
         isFlying = true;
         Vector3 targetPosition = new Vector3(transform.position.x, startPosition.y + posTarget, transform.position.z);
+        float distanceToTravel = Vector3.Distance(transform.position, targetPosition);
         float elapsedTime = 0f;
 
+        // Bay đến vị trí đích
         while (elapsedTime < flyTime)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, (elapsedTime / flyTime));
+            float progress = (elapsedTime * flySpeed) / distanceToTravel;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, progress);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -48,9 +53,12 @@ public class Cay : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         elapsedTime = 0f;
+
+        // Quay về vị trí ban đầu
         while (elapsedTime < flyTime)
         {
-            transform.position = Vector3.Lerp(transform.position, startPosition, (elapsedTime / flyTime));
+            float progress = (elapsedTime * flySpeed) / distanceToTravel;
+            transform.position = Vector3.Lerp(transform.position, startPosition, progress);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

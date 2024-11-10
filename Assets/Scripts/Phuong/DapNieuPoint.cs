@@ -1,25 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
-using System.Drawing;
-using UnityEngine.SceneManagement;
+using UnityEngine;
 
-public class NhayBaoBoPoint : MonoBehaviour
+public class DapNieuPoint : MonoBehaviour
 {
-
     public GameObject gameOverPanel;
     public GameComplete2 gameComplete2;
     //public GameObject player;
     //public GameObject sliderController;
-    public TMP_Text textPoint;
+    //public TMP_Text textPoint;
     public static int Point;
     public int pointWinGame = 10;
-    public bool hasWon = false;
+    public static bool hasWon = false;
 
     void Start()
     {
         Point = 0;
+        hasWon = false;
         SetActiveOJController(true);
         //Player.Instance.IsLevelCompleted(1);
         // CheckLevelStatus(1);
@@ -48,7 +46,7 @@ public class NhayBaoBoPoint : MonoBehaviour
 
     private void FixedUpdate()
     {
-        textPoint.text = Point.ToString();
+        //textPoint.text = Point.ToString();
         WinMiniGame();
     }
 
