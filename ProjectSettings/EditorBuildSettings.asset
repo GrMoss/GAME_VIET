@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimLeVat.unity
     guid: 406840c606de8456e803be15e6afc952
+  - enabled: 1
+    path: Assets/Scenes/TrongDen.unity
+    guid: d9dc9043c872441b1b0772e10ffbcfdd
+  - enabled: 1
+    path: Assets/Scenes/NhayBaoBo.unity
+    guid: f77f5a6c1bafafc45ab5bcacd62c8209
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 496b60aff3a7643ba89ac2eaad848422, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 655ec6b6732e249ec8b76d3ad40d24f0, type: 3}

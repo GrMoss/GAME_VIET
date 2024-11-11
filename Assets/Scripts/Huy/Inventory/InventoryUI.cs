@@ -9,7 +9,7 @@ public class InventoryUI : MonoBehaviour
     private Dictionary<int, ItemSlotUI> activeItemSlots = new Dictionary<int, ItemSlotUI>();
 
     public GameObject[] baoVatSprite;
-    public GameObject[] spriteOJSAT; 
+    public GameObject[] spriteOJSAT;
     private void Start()
     {
         UpdateInventory();
@@ -42,20 +42,32 @@ public class InventoryUI : MonoBehaviour
         }
 
         // Cập nhật trạng thái của baoVatSprite
+        if (baoVatSprite.Length > 2 && baoVatSprite[2] != null)
+        {
+            baoVatSprite[2].SetActive(false); 
+            spriteOJSAT[2].SetActive(true);
+        }
+
         if (baoVatSprite.Length > 3 && baoVatSprite[3] != null)
         {
-            baoVatSprite[3].SetActive(false); // Tắt baoVatSprite[10] ban đầu
+            baoVatSprite[3].SetActive(false); 
             spriteOJSAT[3].SetActive(true);
         }
+
         if (baoVatSprite.Length > 5 && baoVatSprite[5] != null)
         {
-            baoVatSprite[5].SetActive(false); // Tắt baoVatSprite[11] ban đầu
+            baoVatSprite[5].SetActive(false); 
             spriteOJSAT[5].SetActive(true);
         }
 
-        // Kiểm tra các item đặc biệt (IdItem 10 và 11)
+        // Kiểm tra các item đặc biệt
         foreach (var item in inventoryItems)
         {
+            if (item.IdItem == 12 && item.QuantityItem >= 1 && baoVatSprite.Length > 2)
+            {
+                baoVatSprite[2].SetActive(true);
+                spriteOJSAT[2].SetActive(false);
+            }
             if (item.IdItem == 13 && item.QuantityItem >= 1 && baoVatSprite.Length > 3)
             {
                 baoVatSprite[3].SetActive(true);

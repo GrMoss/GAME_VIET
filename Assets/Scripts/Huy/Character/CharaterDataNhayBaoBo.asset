@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86eebdef35b9f4f82804f6377feb762b, type: 3}
+  m_Name: CharaterDataNhayBaoBo
+  m_EditorClassIdentifier: 
+  charaters:
+  - gender: 0
+    spritePlayer: {fileID: -1072397268, guid: 5f3facba6da8f0f4791e16bba905bf3a, type: 3}
+    animatorController: {fileID: 9100000, guid: 367466585f07ed04985ecd89cbd26a2a, type: 2}
+  - gender: 1
+    spritePlayer: {fileID: 2111003376, guid: dde28db284017be4ea75708653c64731, type: 3}
+    animatorController: {fileID: 9100000, guid: 2b73477e1de264347b65576bafd5ceb2, type: 2}
