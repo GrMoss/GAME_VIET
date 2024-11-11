@@ -12,7 +12,7 @@ public class Cay : MonoBehaviour
     public bool useTiltControl = false; // Biến để bật/tắt điều khiển nghiêng
     private Vector3 startPosition;
     private bool isFlying = false;
-
+    [SerializeField] private Animator anim;
     void Start()
     {
         startPosition = transform.position;
@@ -56,7 +56,7 @@ public class Cay : MonoBehaviour
         Vector3 targetPosition = new Vector3(transform.position.x, startPosition.y + posTarget, transform.position.z);
         float distanceToTravel = Vector3.Distance(transform.position, targetPosition);
         float elapsedTime = 0f;
-
+        anim.SetBool("isHit", true);
         // Bay đến vị trí đích
         while (elapsedTime < flyTime)
         {
@@ -65,9 +65,8 @@ public class Cay : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
         yield return new WaitForSeconds(0.5f);
-
+        anim.SetBool("isHit", false);
         elapsedTime = 0f;
 
         // Quay về vị trí ban đầu
