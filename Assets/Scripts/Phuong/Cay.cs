@@ -6,9 +6,10 @@ public class Cay : MonoBehaviour
 {
     public float moveSpeed = 2f;
     public float moveDistance = 3f;
-    public float flySpeed = 5f; 
-    public float flyTime = 1f; 
+    public float flySpeed = 5f;
+    public float flyTime = 1f;
     public float posTarget;
+    public bool useTiltControl = false; // Biến để bật/tắt điều khiển nghiêng
     private Vector3 startPosition;
     private bool isFlying = false;
 
@@ -20,10 +21,25 @@ public class Cay : MonoBehaviour
     void Update()
     {
         if (DapNieuPoint.hasWon == true) return;
+
         if (!isFlying)
         {
-            float x = Mathf.PingPong(Time.time * moveSpeed, moveDistance) - moveDistance / 2;
-            transform.position = new Vector3(startPosition.x + x, startPosition.y, startPosition.z);
+            if (useTiltControl)
+            {
+                // Sử dụng góc nghiêng của thiết bị để điều khiển vị trí
+                float tilt = Input.acceleration.x; // Giá trị từ -1 đến 1, 0 là ngang
+                transform.position = new Vector3(
+                    startPosition.x + tilt * moveDistance / 2,
+                    startPosition.y,
+                    startPosition.z
+                );
+            }
+            else
+            {
+                // Chế độ di chuyển tự động qua lại
+                float x = Mathf.PingPong(Time.time * moveSpeed, moveDistance) - moveDistance / 2;
+                transform.position = new Vector3(startPosition.x + x, startPosition.y, startPosition.z);
+            }
         }
     }
 

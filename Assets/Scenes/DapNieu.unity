@@ -347,7 +347,8 @@ MonoBehaviour:
   moveDistance: 9
   flySpeed: 1
   flyTime: 0.75
-  posTarget: 4
+  posTarget: 5
+  useTiltControl: 1
 --- !u!212 &60044195
 SpriteRenderer:
   m_ObjectHideFlags: 0
