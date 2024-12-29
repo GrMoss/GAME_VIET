@@ -134,7 +134,7 @@ public class JumpOnButton : MonoBehaviour
         if(isDeah) return;
         if (!isJump)
         {
-            myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x, jumpForce);
+            myRigidbody2D.linearVelocity = new Vector2(myRigidbody2D.linearVelocity.x, jumpForce);
             isJump = true;
             myCollider.enabled = false;
         }
@@ -142,9 +142,9 @@ public class JumpOnButton : MonoBehaviour
 
     private void OnFastFall(InputAction.CallbackContext context)
     {
-        if (isJump && myRigidbody2D.velocity.y > 0)
+        if (isJump && myRigidbody2D.linearVelocity.y > 0)
         {
-            myRigidbody2D.velocity = new Vector2(myRigidbody2D.velocity.x, fastFallSpeed);
+            myRigidbody2D.linearVelocity = new Vector2(myRigidbody2D.linearVelocity.x, fastFallSpeed);
         }
     }
 
@@ -184,12 +184,12 @@ public class JumpOnButton : MonoBehaviour
             return;
         }
 
-        if (isJump && myRigidbody2D.velocity.y > 0)
+        if (isJump && myRigidbody2D.linearVelocity.y > 0)
         {
             animator.SetBool("isJump", true);
             animator.SetBool("isFall", false);
         }
-        else if (isJump && myRigidbody2D.velocity.y <= 0)
+        else if (isJump && myRigidbody2D.linearVelocity.y <= 0)
         {
             animator.SetBool("isJump", false);
             animator.SetBool("isFall", true);
@@ -205,7 +205,7 @@ public class JumpOnButton : MonoBehaviour
     public void Die()
     {
         isDeah = true;
-        myRigidbody2D.velocity = Vector2.zero;
+        myRigidbody2D.linearVelocity = Vector2.zero;
         animator.SetBool("isDeah", true);
     }
 }

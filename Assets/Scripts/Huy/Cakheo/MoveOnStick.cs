@@ -39,7 +39,7 @@ public class MoveOnStick : MonoBehaviour
 
     private void FixedUpdate()
     {
-        myRigidbody2D.velocity = moveDirection * speed;
+        myRigidbody2D.linearVelocity = moveDirection * speed;
     }
     
     private void Move()

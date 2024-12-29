@@ -38,7 +38,7 @@ public class PlayerMovememt : MonoBehaviour
 
     private void FixedUpdate()
     {
-        myRigidbody2D.velocity = moveDirection * speed;
+        myRigidbody2D.linearVelocity = moveDirection * speed;
     }
 
     
